@@ -1,4 +1,4 @@
-function config($stateProvider, $locationProvider, $urlRouterProvider) {
+function config($stateProvider, $locationProvider, $urlRouterProvider,$mdThemingProvider) {
 	    
 	    /*
 	        Supprime le préfixe "!" des URLs, présent par défaut dans Angular 1.6.* (voir http://stackoverflow.com/questions/41226122/url-hash-bang-prefix-instead-of-simple-hash-in-angular-1-6)
@@ -36,5 +36,13 @@ function config($stateProvider, $locationProvider, $urlRouterProvider) {
 	// Nomme explicitement les injections de dépendances (pour éviter les bugs lors de la minification)
 	config.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider']
 	
+
+	// Bout de code pour faire marcher material
+	// http://luxiyalu.com/angular-material-style-not-working/
+  	$mdThemingProvider.theme('default')
+    	.primaryPalette('blue')
+    	.accentPalette('blue-grey')
+    	.warnPalette('orange');
+
 	// Export de la fonction de configuration
 	export default config
