@@ -1,8 +1,96 @@
-.active {
+/*.active {
 	background-color: black;
 	color: white;
+}*/
+
+/***********************************/
+/*           GENERAUX              */
+/***********************************/
+body {
+	background-color: #18181d;
+	color: #ffffff;
+}
+nav {background-color: #26262c;}
+header{ padding-top: 60px;}
+h2 {
+	display: inline-block;
+	margin: 0;
+	font-size: 1.375rem;
+}
+p {margin: 0;}
+
+.legend {
+	color: #a9a9b7;
+	font-size: 0.875rem;
+	letter-spacing: 1px;
+}
+.container {
+	width: 1170px;
+	margin: 0 auto;
 }
 
-nav {
-	background-color: rgb(0,0,0);
+.left {float: left;}
+.right {float: right;}
+.clearfix {clear: both;}
+
+
+/*********************/
+/*       HOME        */
+/********************/
+
+p.next-to-h2, #button-add {
+	display: inline-block;
+	margin: 0;
 }
+p.next-to-h2 {padding-left: 12px;}
+header a {
+	color: #ffffff;
+	display: block;
+}
+
+/*** FILTERS ***/
+#form-filters {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: #26262c;
+	padding: 30px;
+}
+#selects-filters {
+	background-color: red;
+	display: flex;
+	flex-direction: row;
+}
+#btn-filters{
+	background-color: blue;
+}
+
+/*** LISTE ***/
+#home-ul-projects {
+	display: flex;
+	flex-flow: row wrap;
+}
+#home-ul-projects li {
+	margin: 0 20px;
+}
+
+#home-ul-projects li div {
+	background-color: #26262c;
+	padding: 20px;
+	border-bottom: 1px solid rgb(54, 54, 65);
+}
+
+#home-ul-projects li div:nth-of-type(1){
+	border: none;
+	height: 135px;
+	width: auto;
+	background-color: #9595a5;
+}
+
+.cl-light-theme{
+	background-color: grey;
+}
+
+
+
+

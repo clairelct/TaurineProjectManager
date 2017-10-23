@@ -14,18 +14,18 @@ function config($stateProvider, $locationProvider, $urlRouterProvider) {
 	    
 	    $stateProvider
 	        .state({
-	            name        : 'hello',
-	            url         : '/hello',
-	            templateUrl : 'src/hello/hello.view.html',
-	            controller  : 'HelloController',
-	            controllerAs: 'hello'
-	        })
-	        .state({
 	            name        : 'home',
 	            url         : '/',
 	            templateUrl : 'src/home/home.view.html',
-	            controller  : 'HomeController',
+	            controller  : 'HomeCtrl',
 	            controllerAs: 'home'
+	        })
+	        .state({
+	            name        : 'new-project',
+	            url         : '/new-project',
+	            templateUrl : 'src/create/create.view.html',
+	            controller  : 'CreateCtrl',
+	            controllerAs: 'create'
 	        })
 		
 	    // Si aucune route n'est atteinte, on charge par defaut celle-ci (la home)
