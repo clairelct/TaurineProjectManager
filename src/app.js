@@ -8,7 +8,7 @@ import HomeCtrl from './home/home.controller.js'
 // ou var angular = require('angular') dans js
 	
 	angular
-	    .module('myApp', ['ui.router','ngMaterial','ngAnimate','ngAria','ngMessages'])
+	    .module('myApp', ['ui.router'])
 	    .config(config)
 	    .controller('CreateCtrl', CreateCtrl)
 	    .controller('HomeCtrl', HomeCtrl);

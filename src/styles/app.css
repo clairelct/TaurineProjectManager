@@ -11,13 +11,17 @@ body {
 	color: #ffffff;
 }
 nav {background-color: #26262c;}
-header{ padding-top: 60px;}
+a {
+	text-decoration: none;
+	color: white;
+}
 h2 {
-	display: inline-block;
-	margin: 0;
-	font-size: 1.375rem;
+	padding: 15px 0;
+    font-size: 1.375rem;
+    margin: 0;
 }
 p {margin: 0;}
+
 
 .legend {
 	color: #a9a9b7;
