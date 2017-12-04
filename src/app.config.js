@@ -43,6 +43,7 @@ function config($stateProvider, $locationProvider, $urlRouterProvider,$mdTheming
     	.primaryPalette('blue')
     	.accentPalette('blue-grey')
     	.warnPalette('orange');
+    	console.log('coucou');
 
 	// Export de la fonction de configuration
 	export default config
