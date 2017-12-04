@@ -1,5 +1,4 @@
 function config($stateProvider, $locationProvider, $urlRouterProvider,$mdThemingProvider) {
-	    
 	    /*
 	        Supprime le préfixe "!" des URLs, présent par défaut dans Angular 1.6.* (voir http://stackoverflow.com/questions/41226122/url-hash-bang-prefix-instead-of-simple-hash-in-angular-1-6)
 	        Au lieu de qqch comme   http://localhost:8080/#!/home ,
@@ -29,20 +28,24 @@ function config($stateProvider, $locationProvider, $urlRouterProvider,$mdTheming
 	        })
 		
 	    // Si aucune route n'est atteinte, on charge par defaut celle-ci (la home)
-	    $urlRouterProvider.otherwise('/')
+		$urlRouterProvider.otherwise('/')
+		
+		// Bout de code pour faire marcher material
+		// http://luxiyalu.com/angular-material-style-not-working/
+		// $mdThemingProvider.theme('default')
+		// .primaryPalette('blue')
+		// .accentPalette('blue-grey')
+		// .warnPalette('orange');
+
+		$mdThemingProvider.theme('default')
+		.primaryPalette('pink')
+		.accentPalette('orange');
 	    
 	}
 	
 	// Nomme explicitement les injections de dépendances (pour éviter les bugs lors de la minification)
-	config.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider']
-	
+	config.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', '$mdThemingProvider']
 
-	// Bout de code pour faire marcher material
-	// http://luxiyalu.com/angular-material-style-not-working/
-  	$mdThemingProvider.theme('default')
-    	.primaryPalette('blue')
-    	.accentPalette('blue-grey')
-    	.warnPalette('orange');
 
 	// Export de la fonction de configuration
 	export default config
