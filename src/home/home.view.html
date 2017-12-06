@@ -1,41 +1,58 @@
 <div class="container">
+	
 	<header> <!-- Transformer header en directive ? -->
-		<h2><a ui-sref="home">Accueil</a></h2>
-		<div class="left">
+		<div class="header-title">
+			<h2><a ui-sref="home">Accueil</a></h2>
 			<p>Tous les projets</p>
 		</div>
-		<div class="right">
+		<div class="btn-window">			
 			<a ui-sref="new-project">
-				<p id="button-add">Ajouter un projet</p>
+				<p >Ajouter un projet</p>
+				<i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i>
 			</a>
 		</div>
 	</header>
 	<div class="clearfix"></div>
 
 	<!-- FILTRES -->
-	<form id="form-filters">
+	<form id="form-filters" class="row">
 		<!-- filtres -->
-		<div id="selects-filters">	
+		<div id="selects-filters" class="col-lg-8">	
 			<div>
 				<p class="legend">Tous</p>
-				<a href=""></a>	
+				<a href=""><i class="fa fa-th fa-lg" aria-hidden="true"></i></a>	
 			</div>
 			<div>
-				<p class="legend">Domaine</p>
-				<select name="" id="">
-					<option value="">OK</option>
+				<label class="legend">Domaine</label>
+				<select name="" id="selectDomain">
+					<option value="webdesign" selected>Webdesign</option>
+					<option value="print">Print</option>
+					<option value="web developpment">Web Developpment</option>
+					<option value="motion design">Motion Design</option>
 				</select>	
 			</div>
 			<div>
-				<p class="legend">Auteur</p>	
+				<label class="legend">Auteur</label>
+				<select name="" id="selectAuthor">
+					<option value="katell" selected>Katell</option>
+					<option value="pascal">Pascal</option>
+					<option value="victor">Victor</option>
+					<option value="jérôme">Jérôme</option>
+				</select>	
 			</div>
 			<div>
-				<p class="legend">Client</p>	
+				<label class="legend">Client</label>
+				<select name="" id="selectClient">
+					<option value="m6pub" selected>M6 Publicité</option>
+					<option value="warner bros">Warner Bros</option>
+					<option value="armani">Armani</option>
+					<option value="w9">W9</option>
+				</select>	
 			</div>		
 		</div><!-- ./ end selects-filters -->
 		<!-- bouton -->
-		<div id="btn-filters">	
-		<p>Rechercher</p>		
+		<div id="btn-filters" class="col-lg-4">	
+		<input type="submit" value="Appliquer les filtres" class="right"></input>		
 		</div>
 	</form><!-- ./ end filters -->
 
@@ -57,6 +74,6 @@
 			</div>		
 		</li>
 	</ul>
-	
+
 
 </div><!-- ./ end .container -->

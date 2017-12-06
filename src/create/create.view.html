@@ -1,21 +1,135 @@
-<div class="cl-light-theme">
-<div class="container">
-	<header> <!-- Transformer header en directive ? -->
-		<div class="left">
-			<h2>Nouveau projet</h2>
-		</div>
-		<div class="right">
-			<a ui-sref="home">
-				<p id="button-add">Fermer</p>
-			</a>
-		</div>
-	</header>
-	<div class="clearfix"></div>
+<div class="light-theme">
+	<div class="container" ng-controller="CreateCtrl as create">
+		
+		<header> <!-- Transformer header en directive ? -->
+			<div class="header-title">
+				<h2>Nouveau projet</h2>
+				<p>Éditer un nouveau projet</p>
+			</div>
+			<div class="btn-window">
+				<a ui-sref="home">
+					<p>Fermer</p>				
+				<i class="fa fa-window-close fa-2x" aria-hidden="true"></i>
+				</a>
+			</div>
+		</header>
+		<!-- <div class="clearfix"></div> -->
+		
+
+			<form id="createForm" action="" method="post" class="col-lg-12">
+				<div class="row">
+					<!-- /// BLOC GAUCHE -->
+					<div class="col-lg-9">
+						<!-- Bloc INFOS-->
+						<section id="infos-proj">
+							<div class="titre">
+								<label for="" class="legend">Titre du projet</label>
+								<input type="text" placeholder="Nom du projet">
+							</div>
+							<div class="checkboxDomain">
+								<label for="" class="legend">Domaine</label>
+								<fieldset>
+									<input type="checkbox" name="checkbox" value="print" id="box1"><label for="box1">Print</label> 
+									<input type="checkbox" name="checkbox" value="webdesign" id="box2"><label for="box2">Webdesign</label>
+									<input type="checkbox" name="checkbox" value="motiondesign" id="box3"><label for="box3">Motion Design</label>
+									<input type="checkbox" name="checkbox" value="webdeveloppement" id="box4"><label for="box4">Web Developpment</label>
+									<!-- used to show when fieldset is focused <div class="focus"></div>-->
+								</fieldset>
+							</div>
+							<div class="client-delay">
+								<div class="client">
+									<label for="" class="legend">Client</label>
+									<input type="text" placeholder="Nom du client">
+								</div>
+								<div class="delay">
+									<p for="" class="legend">Délais</p>
+									<div>
+										<div>
+											<p>Début</p>
+											<md-datepicker ng-model="date1" md-placeholder="Entrer une date"></md-datepicker>
+										</div>
+										<div>
+											<p>Fin</p>
+											<md-datepicker ng-model="date2" md-placeholder="Entrer une date"></md-datepicker>
+										</div>
+									</div>								
+								</div>
+							</div>
+
+						</section>
+						<!-- Bloc BRIEF-->
+						<section id="brief-proj">
+							<label for="" class="legend">Brief / Commentaire</label>
+							<textarea placeholder="Description du projet..."></textarea> 
+						</section>
+					</div><!-- ./end col-lg-9 -->
+
+					<!-- /// BLOC DROITE -->
+					<div class="col-lg-3">
+						<!-- Bloc UPLOAD-->
+						<section id="upload-proj">
+							<div class="frame"><img src="./src/img/thumbnail_project_frame.gif" alt="Template Image du projet"></div>
+							<div class="buttons">
+								<a href=""><div><i class="fa fa-upload" aria-hidden="true"></i></div></a>
+								<a href=""><div><i class="fa fa-trash" aria-hidden="true"></i></a>	
+							</div>
+						</section>
+						<!-- Bloc AUTHORS -->
+						<section id="authors-proj">
+							<div><p class="legend">Auteur(s) du projet</p></div>
+							<div class="authors-list">
+								<fieldset>
+									<div class="authors">
+										<label for="author1">Jérôme</label> 
+										<input type="checkbox" name="checkbox" value="Jérôme" id="author1">
+									</div>
+									<div class="authors">
+										<label for="author2">Katell</label>
+										<input type="checkbox" name="checkbox" value="Katell" id="author2">
+									</div>
+									<div class="authors">
+										<label for="author3">Laëtitia</label>
+										<input type="checkbox" name="checkbox" value="Laëtitia" id="author3">
+									</div>
+									<div class="authors">
+										<label for="author4">Sabrina</label>
+										<input type="checkbox" name="checkbox" value="Sabrina" id="author4">
+									</div>
+									<div class="authors">
+										<label for="author5">Pascal</label> 
+										<input type="checkbox" name="checkbox" value="Pascal" id="author5">
+									</div>
+									<div class="authors">
+										<label for="author6">Claire</label>
+										<input type="checkbox" name="checkbox" value="Claire" id="author6">
+									</div>
+									<div class="authors">
+										<label for="author7">Matthias</label>
+										<input type="checkbox" name="checkbox" value="Matthias" id="author7">
+									</div>
+									<div class="authors">
+										<label for="author8">Victor</label>
+										<input type="checkbox" name="checkbox" value="Victor" id="author8">
+								    </div>
+								</fieldset> 
+							</div>
+						</section>
+					</div><!-- ./ end col-lg-3-->						
+				</div><!-- .row interieure form -->
+				<!-- BOUTON ENREGISTRER -->
+				<div class="row">
+					<div class="save-form col-lg-12">
+						<input type="submit" value="Enregistrer">			
+					</div>
+				</div>
+			</form>	 
+
+	</div><!-- ./ end .container-->	
+
+
+
+			 
+
+
 	
-	<div ng-controller="CreateCtrl as create">
-
-  
-</div>
-
-</div><!-- ./ end .container-->
 </div>

@@ -10,46 +10,117 @@ body {
 	background-color: #18181d;
 	color: #ffffff;
 }
-nav {background-color: #26262c;}
-a {
+nav {
+	background-color: #26262c;
+	padding: 15px 0;
+}
+a, a:hover, a:visited, a:focus {
 	text-decoration: none;
 	color: white;
 }
+a:hover {cursor: pointer;}
+a:focus {outline: none!important;}
+h1{
+	font-size:20px!important;
+	margin: 0!important;
+}
 h2 {
-	padding: 15px 0;
-    font-size: 1.375rem;
+	padding: 2px 10px;
+    font-size: 18px;
     margin: 0;
+    font-weight: bold;
 }
 p {margin: 0;}
 
 
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 45px 0 25px;
+}
+
+
+input, select, textarea {
+	background-color: rgba(0,0,0,0);
+}
+input::-webkit-input-placeholder, input::-moz-placeholder,
+input:-ms-input-placeholder, input:-moz-placeholder {color: #9695a5!important;}
+input:focus {outline: none;}
+
+img {width: 100%;}
+
 .legend {
 	color: #a9a9b7;
-	font-size: 0.875rem;
-	letter-spacing: 1px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    margin-bottom: 8px;
+    line-height: 13px;
 }
 .container {
-	width: 1170px;
 	margin: 0 auto;
 }
 
 .left {float: left;}
 .right {float: right;}
 .clearfix {clear: both;}
+.bold {font-weight: bold;}
 
 
 /*********************/
 /*       HOME        */
 /********************/
+nav .container > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav .logo-nav a {
+	display: flex;
+	align-items: center;
+}
+nav .logo {
+	width: 70px;
+	margin-right: 10px;
+} 
+nav .membreConnect, nav .membre {display: flex;}
+nav .membre {align-items: center;}
+nav .membre div {
+	width: 30px;
+	height: 30px;
+	margin-left: 15px;
+}
+nav .membreConnect div:nth-of-type(2){
+	position: relative;
+	margin-left: 20px;
+}
+nav .membreConnect div:nth-of-type(2) i {
+	position: absolute;
+	top: 50%;
+	left:0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+/*** HEADER ***/
+
+.header-title h2, .header-title h2 + p {
+	display: inline-block;
+}
+.header-title h2 {
+	border-right: 1px solid #696875;
+	margin-right: 5px;
+}
 
 p.next-to-h2, #button-add {
 	display: inline-block;
 	margin: 0;
 }
 p.next-to-h2 {padding-left: 12px;}
-header a {
-	color: #ffffff;
-	display: block;
+
+header > div:nth-of-type(2){
+	display: flex;
+	align-items: center;
 }
 
 /*** FILTERS ***/
@@ -58,21 +129,31 @@ header a {
 	flex-direction: row;
 	justify-content: space-between;
 	background-color: #26262c;
-	padding: 30px;
+	padding: 25px 0;
 }
 #selects-filters {
-	background-color: red;
 	display: flex;
 	flex-direction: row;
 }
-#btn-filters{
-	background-color: blue;
+#selects-filters div {
+	display: flex;
+	flex-direction: column;
+	padding: 0 20px;
+}
+
+#btn-filters > input {
+	border-radius: 50px;
+	background-color: #dd3340;
+	border: none;
+	padding: 8px 15px;
 }
 
 /*** LISTE ***/
 #home-ul-projects {
 	display: flex;
 	flex-flow: row wrap;
+	padding: 0!important;
+	list-style-type: none;
 }
 #home-ul-projects li {
 	margin: 0 20px;
@@ -91,10 +172,304 @@ header a {
 	background-color: #9595a5;
 }
 
-.cl-light-theme{
-	background-color: grey;
+/****************************/
+/*   TEMPLATE FORM CREATE   */
+/****************************/
+/*** LIGHT THEME ***/
+.light-theme{background-color: #f5f5f7;}
+
+.light-theme #infos-proj, .light-theme #brief-proj,
+.light-theme #upload-proj, .light-theme #authors-proj {
+	background-color: #ffffff;
+}
+.light-theme .delay > div > div {color: #3d3c42;}
+
+.light-theme #infos-proj > div,
+.light-theme #authors-proj > div:first-child{border-bottom:1px solid #e9e9ec;}
+.light-theme .delay {border-left:1px solid #e9e9ec;}
+.light-theme md-icon.md-default-theme, .light-theme md-icon{color:#3c3b41!important;}
+.light-theme .md-datepicker-input {
+	font-weight: normal;
+	color: #9695a5;
+}
+.light-theme .md-datepicker-input::placeholder {color:#9695a5!important;}
+.light-theme .md-datepicker-triangle-button .md-datepicker-expand-triangle,
+.light-theme .md-datepicker-triangle-button:hover .md-datepicker-expand-triangle {border-top-color: #3c3b41;}
+.light-theme #brief-proj textarea {border: 1px solid #e9e9ec;}
+.light-theme #infos-proj .titre input, .light-theme  #infos-proj .client input {color:#3b3c40;}
+.light-theme #infos-proj .titre input::placeholder, .light-theme  #infos-proj .client input::placeholder, #brief-proj textarea::placeholder{color: #e1e1e6;}
+.light-theme #upload-proj .buttons div {background-color: #323137;}
+.light-theme .save-form input {
+	background-color: #ffffff;
+	border: 1px solid #dfdee8;
+	color: #323137;
+}
+.light-theme .save-form input:hover {color: #ffffff;}
+
+.light-theme header,.light-theme header a, .light-theme .authors-list fieldset label {color: #3d3c42;}
+
+
+
+#infos-proj, #brief-proj, #upload-proj, #authors-proj {
+	background-color: #27262c;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, .1);
+	padding: 0 20px;
+}
+#infos-proj, #upload-proj {margin-bottom: 25px;}
+#authors-proj{padding: 0;}
+
+.btn-window a {
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+}
+.btn-window a p {margin-right: 10px;}
+/****************/
+/*	Bloc INFOS  */
+/****************/
+
+.checkboxDomain fieldset{
+	border: 0;
+	padding: 0; margin: 10px 0 0 0;
+/*	width: 50px;*/
+	max-width: 100%;
+	font-size: 0;
+	position: relative;
+}
+
+.checkboxDomain fieldset legend {
+	font-size: 17px;
+	margin-bottom: 15px;
+}
+
+.checkboxDomain fieldset label {
+	/* label used as button */
+/*	width: 105px;
+	height: 55px;
+	line-height: 55px;*/
+	display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #FFF;
+    background: #9695a5;
+    padding: 5px 18px;	
+}
+
+.checkboxDomain fieldset input {
+	border: 0; 
+	clip: rect(0 0 0 0); 
+	height: 1px; margin: -1px; 
+	overflow: hidden; 
+	padding: 0; 
+	position: absolute; 
+	width: 1px;
+}
+
+.checkboxDomain fieldset input:checked + label {
+	background: #e33141;
+	color: #fff;
+}
+
+.checkboxDomain fieldset input:focus ~ label {
+	box-shadow: none;
+	outline: 0 none;
+}
+.checkboxDomain fieldset input:focus ~ .focus {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	margin: 5px;
+	padding: 5px;
+	outline: 0;
+	border: 1px solid #35a3e8;
+	box-shadow: 0 0 10px #35a3e8;
+	z-index:-1;
+}
+
+#infos-proj .titre input, #infos-proj .client input {
+	display: block;
+    width: 100%;
+    line-height: 45px;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+}
+#infos-proj .titre input::placeholder, #infos-proj .client input::placeholder, #brief-proj textarea::placeholder {color: #616069;}
+
+#infos-proj > div {
+	padding: 20px 0;
+	border-bottom: 1px solid #494853;
+}
+
+#infos-proj > div:nth-of-type(3){border-bottom: none;}
+
+
+.client-delay {
+	display: flex;
+}
+
+.client {
+	flex-grow: 1;
+}
+#infos-proj .client input{
+	line-height: 30px;
+    font-size: 18px;
+}
+
+.delay {
+	flex-grow: 1;
+	border-left: 1px solid #494853;
+	padding-left: 20px;
+}
+
+.delay > div, .delay > div > div {
+	display: flex;
+}
+.delay > div > div {
+	align-items: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffffff;
+}
+.delay > div > div:nth-of-type(1){margin-right: 20px;}
+
+.md-icon-button+.md-datepicker-input-container {
+    margin-left: 0px;
+}
+
+md-icon.md-default-theme, md-icon{color:#9695a5!important;}
+.md-datepicker-input {
+	font-weight: normal;
+	color: #ffffff;
+}
+.md-datepicker-input::placeholder {color:#ffffff!important;}
+
+.md-datepicker-triangle-button .md-datepicker-expand-triangle,
+.md-datepicker-triangle-button:hover .md-datepicker-expand-triangle {border-top-color: #ffffff;}
+
+
+/****************/
+/*	Bloc BRIEF  */
+/****************/
+#brief-proj {
+	padding: 20px;
+}
+#brief-proj textarea {
+	display: block;
+	width: 100%;
+	padding: 10px;
+    min-height: 200px;
+    border: 1px solid #494853;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+/*****************/
+/*	Bloc UPLOAD  */
+/*****************/
+#upload-proj {padding: 20px;}
+#upload-proj .frame {
+	width: 100%;
+	/*height: 135px;*/
+	background-color: #000;
+}
+#upload-proj .frame img {width:100%;}
+#upload-proj .buttons {
+	display: flex;
+	padding-top: 20px;
+    justify-content: flex-end;
+}
+#upload-proj .buttons div {
+	margin-left: 7px;
+	width: 40px;
+	height: 40px;
+	background-color: #9695a5;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-transition: .2s background-color ease-in-out;
+	-moz-transition: .2s background-color ease-in-out;
+	-o-transition: .2s background-color ease-in-out;
+	transition: .2s background-color ease-in-out;
+}
+#upload-proj .buttons div:hover {
+	background-color: #e23141;
+}
+#upload-proj i, #upload-proj i:hover {color:#ffffff!important;}
+
+/******************/
+/*	Bloc AUTHORS  */
+/******************/
+
+#authors-proj {
+	display: flex;
+	flex-direction: column;
+}
+#authors-proj > div:first-child {
+	padding: 20px;
+	border-bottom: 1px solid #494853;
+}
+#authors-proj .legend {margin-bottom: 0px;}
+#authors-proj .authors {position: relative;}
+
+.authors-list fieldset{
+	border: 0;
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	font-size: 0;
+	position: relative;
+}
+
+.authors-list fieldset label {
+	/* label used as button */
+    display: inline-block;
+    text-align: left;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 10px 18px;
+    width: 100%;
+    margin: 0;
+    font-weight: bold;
+}
+.authors-list input[type=checkbox] {
+	margin:0!important;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20px;
 }
 
 
+.authors-list fieldset input:checked  {
+	background: #e33141;
+	color: #fff;
+}
 
+/*** BOUTON ENREGISTRER ***/
+
+.save-form {margin: 50px 0 20px;}
+.save-form input{
+	padding: 30px 0;
+	text-align: center;
+	width: 100%;
+	font-weight: bold;
+	font-size: 18px;
+	color: #ffffff;
+	border: 1px solid #494853;
+	background-color: #27262c;
+	-webkit-transition: .2s background-color ease-in-out;
+	transition: .2s color background-color ease-in-out;
+}
+
+.save-form input:hover {background-color: #e33141;}
 
