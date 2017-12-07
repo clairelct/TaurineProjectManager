@@ -42,7 +42,7 @@
 									<input type="text" placeholder="Nom du client">
 								</div>
 								<div class="delay">
-									<p for="" class="legend">Délais</p>
+									<p class="legend">Délais</p>
 									<div>
 										<div>
 											<p>Début</p>
@@ -78,40 +78,32 @@
 						<section id="authors-proj">
 							<div><p class="legend">Auteur(s) du projet</p></div>
 							<div class="authors-list">
-								<fieldset>
-									<div class="authors">
-										<label for="author1">Jérôme</label> 
-										<input type="checkbox" name="checkbox" value="Jérôme" id="author1">
+								<form name="authorsForm">
+									<div class="author">
+										<md-checkbox  ng-checked aria-label="Jérôme">Jérôme</md-checkbox>
 									</div>
-									<div class="authors">
-										<label for="author2">Katell</label>
-										<input type="checkbox" name="checkbox" value="Katell" id="author2">
+									<div class="author">
+										<md-checkbox  md-no-ink ng-checked aria-label="Katell">Katell</md-checkbox>
 									</div>
-									<div class="authors">
-										<label for="author3">Laëtitia</label>
-										<input type="checkbox" name="checkbox" value="Laëtitia" id="author3">
+									<div class="author">
+										<md-checkbox  md-no-ink ng-checked aria-label="Sabrina">Sabrina</md-checkbox>
 									</div>
-									<div class="authors">
-										<label for="author4">Sabrina</label>
-										<input type="checkbox" name="checkbox" value="Sabrina" id="author4">
+									<div class="author">
+										<md-checkbox  ng-checked aria-label="Pascal">Pascal</md-checkbox>
 									</div>
-									<div class="authors">
-										<label for="author5">Pascal</label> 
-										<input type="checkbox" name="checkbox" value="Pascal" id="author5">
+									<div class="author">
+										<md-checkbox  md-no-ink ng-checked aria-label="Laëtitia">Laëtitia</md-checkbox>
 									</div>
-									<div class="authors">
-										<label for="author6">Claire</label>
-										<input type="checkbox" name="checkbox" value="Claire" id="author6">
+									<div class="author">
+										<md-checkbox  md-no-ink ng-checked aria-label="Claire">Claire</md-checkbox>
 									</div>
-									<div class="authors">
-										<label for="author7">Matthias</label>
-										<input type="checkbox" name="checkbox" value="Matthias" id="author7">
+									<div class="author">
+										<md-checkbox  md-no-ink ng-checked aria-label="Matthias">Matthias</md-checkbox>
 									</div>
-									<div class="authors">
-										<label for="author8">Victor</label>
-										<input type="checkbox" name="checkbox" value="Victor" id="author8">
-								    </div>
-								</fieldset> 
+									<div class="author">
+										<md-checkbox  md-no-ink ng-checked aria-label="Victor">Victor</md-checkbox>
+									</div>
+								</form>
 							</div>
 						</section>
 					</div><!-- ./ end col-lg-3-->						

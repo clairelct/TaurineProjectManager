@@ -179,26 +179,31 @@ header > div:nth-of-type(2){
 .light-theme{background-color: #f5f5f7;}
 
 .light-theme #infos-proj, .light-theme #brief-proj,
-.light-theme #upload-proj, .light-theme #authors-proj {
-	background-color: #ffffff;
-}
-.light-theme .delay > div > div {color: #3d3c42;}
+.light-theme #upload-proj, .light-theme #authors-proj {background-color: #ffffff;}
 
 .light-theme #infos-proj > div,
 .light-theme #authors-proj > div:first-child{border-bottom:1px solid #e9e9ec;}
 .light-theme .delay {border-left:1px solid #e9e9ec;}
-.light-theme md-icon.md-default-theme, .light-theme md-icon{color:#3c3b41!important;}
-.light-theme .md-datepicker-input {
-	font-weight: normal;
-	color: #9695a5;
+
+.light-theme md-icon.md-default-theme, .light-theme md-icon, 
+.light-theme #brief-proj textarea, .light-theme #infos-proj .titre input,
+.light-theme  #infos-proj .client input, .light-theme .md-datepicker-input,
+.light-theme header,.light-theme header a, .light-theme .authors-list fieldset label,
+.light-theme .delay > div > div, .light-theme #authors-proj md-checkbox {color:#3c3b41!important;}
+
+.light-theme .md-datepicker-input {font-weight: normal;
 }
 .light-theme .md-datepicker-input::placeholder {color:#9695a5!important;}
 .light-theme .md-datepicker-triangle-button .md-datepicker-expand-triangle,
 .light-theme .md-datepicker-triangle-button:hover .md-datepicker-expand-triangle {border-top-color: #3c3b41;}
 .light-theme #brief-proj textarea {border: 1px solid #e9e9ec;}
-.light-theme #infos-proj .titre input, .light-theme  #infos-proj .client input {color:#3b3c40;}
-.light-theme #infos-proj .titre input::placeholder, .light-theme  #infos-proj .client input::placeholder, #brief-proj textarea::placeholder{color: #e1e1e6;}
+
+.light-theme #infos-proj .titre input::placeholder,
+.light-theme  #infos-proj .client input::placeholder,
+#brief-proj textarea::placeholder{color: #e1e1e6;}
+
 .light-theme #upload-proj .buttons div {background-color: #323137;}
+
 .light-theme .save-form input {
 	background-color: #ffffff;
 	border: 1px solid #dfdee8;
@@ -206,7 +211,11 @@ header > div:nth-of-type(2){
 }
 .light-theme .save-form input:hover {color: #ffffff;}
 
-.light-theme header,.light-theme header a, .light-theme .authors-list fieldset label {color: #3d3c42;}
+.light-theme #authors-proj md-checkbox.md-checked .md-label {color:#ffffff;}
+.light-theme #authors-proj md-checkbox:not(.md-checked) .md-icon {border-color: #c4c3cf;}
+
+/****/
+
 
 
 
@@ -339,9 +348,7 @@ header > div:nth-of-type(2){
 }
 .delay > div > div:nth-of-type(1){margin-right: 20px;}
 
-.md-icon-button+.md-datepicker-input-container {
-    margin-left: 0px;
-}
+.md-icon-button+.md-datepicker-input-container {margin-left: 0px;}
 
 md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 .md-datepicker-input {
@@ -357,9 +364,8 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 /****************/
 /*	Bloc BRIEF  */
 /****************/
-#brief-proj {
-	padding: 20px;
-}
+#brief-proj {padding: 20px;}
+
 #brief-proj textarea {
 	display: block;
 	width: 100%;
@@ -417,44 +423,40 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 	border-bottom: 1px solid #494853;
 }
 #authors-proj .legend {margin-bottom: 0px;}
-#authors-proj .authors {position: relative;}
 
-.authors-list fieldset{
-	border: 0;
-	padding: 0;
-	margin: 0;
-	max-width: 100%;
-	font-size: 0;
-	position: relative;
+/* checkbox auteurs */
+#authors-proj md-checkbox {color: #fff!important;}
+#authors-proj md-checkbox:not(.md-checked) .md-icon {border-color: rgba(255, 255, 255, .1);}
+#authors-proj md-checkbox {
+	margin-bottom: 0;
+	min-width: initial;
+	width: 100%;
+	padding: 12px 20px;
+}
+#authors-proj md-checkbox .md-container {
+	left: auto;
+    right: 20px;
+}
+#authors-proj md-checkbox .md-label {
+	margin-right: 30px;
+    margin-left: 0;
 }
 
-.authors-list fieldset label {
-	/* label used as button */
-    display: inline-block;
-    text-align: left;
-    font-size: 14px;
-    font-weight: normal;
-    cursor: pointer;
-    color: #ffffff;
-    padding: 10px 18px;
-    width: 100%;
-    margin: 0;
-    font-weight: bold;
+#authors-proj .author > div {
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	background-color: red;
 }
-.authors-list input[type=checkbox] {
-	margin:0!important;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	right: 20px;
+#authors-proj .author .md-checked, #authors-proj md-checkbox.md-checked .md-icon {
+	background-color: #e33141;
 }
-
-
-.authors-list fieldset input:checked  {
-	background: #e33141;
-	color: #fff;
+#authors-proj md-checkbox.md-checked .md-ink-ripple {color:#e33141!important;}
+#authors-proj md-checkbox.md-checked .md-label {font-weight: bold;}
+#authors-proj md-checkbox .md-icon {
+	-webkit-transition: none!important;
+    transition: none!important;
 }
-
 /*** BOUTON ENREGISTRER ***/
 
 .save-form {margin: 50px 0 20px;}
