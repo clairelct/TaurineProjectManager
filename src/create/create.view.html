@@ -16,7 +16,7 @@
 		<!-- <div class="clearfix"></div> -->
 		
 
-			<form id="createForm" action="" method="post" class="col-lg-12">
+			<form  id="createForm" action="" method="post" class="col-lg-12">
 				<div class="row">
 					<!-- /// BLOC GAUCHE -->
 					<div class="col-lg-9">
@@ -24,7 +24,7 @@
 						<section id="infos-proj">
 							<div class="titre">
 								<label for="" class="legend">Titre du projet</label>
-								<input type="text" placeholder="Nom du projet">
+								<input type="text" placeholder="Nom du projet" ng-model="create.newProject.title">
 							</div>
 							<div class="checkboxDomain">
 								<label for="" class="legend">Domaine</label>
@@ -39,7 +39,7 @@
 							<div class="client-delay">
 								<div class="client">
 									<label for="" class="legend">Client</label>
-									<input type="text" placeholder="Nom du client">
+									<input type="text" placeholder="Nom du client" ng-model="create.newProject.client">
 								</div>
 								<div class="delay">
 									<p class="legend">Délais</p>
@@ -60,7 +60,7 @@
 						<!-- Bloc BRIEF-->
 						<section id="brief-proj">
 							<label for="" class="legend">Brief / Commentaire</label>
-							<textarea placeholder="Description du projet..."></textarea> 
+							<textarea placeholder="Description du projet...">{{create.newProject.brief}}</textarea> 
 						</section>
 					</div><!-- ./end col-lg-9 -->
 
@@ -80,28 +80,28 @@
 							<div class="authors-list">
 								<form name="authorsForm">
 									<div class="author">
-										<md-checkbox  ng-checked aria-label="Jérôme">Jérôme</md-checkbox>
+										<md-checkbox  ng-checked aria-label="Jérôme" ng-model="create.chkBoxAuthors.jerome">Jérôme</md-checkbox>
 									</div>
 									<div class="author">
-										<md-checkbox  md-no-ink ng-checked aria-label="Katell">Katell</md-checkbox>
+										<md-checkbox  md-no-ink ng-checked aria-label="Katell" ng-model="create.chkBoxAuthors.katell">Katell</md-checkbox>
 									</div>
 									<div class="author">
-										<md-checkbox  md-no-ink ng-checked aria-label="Sabrina">Sabrina</md-checkbox>
+										<md-checkbox  md-no-ink ng-checked aria-label="Sabrina" ng-model="create.chkBoxAuthors.sabrina">Sabrina</md-checkbox>
 									</div>
 									<div class="author">
-										<md-checkbox  ng-checked aria-label="Pascal">Pascal</md-checkbox>
+										<md-checkbox  ng-checked aria-label="Pascal" ng-model="create.chkBoxAuthors.pascal">Pascal</md-checkbox>
 									</div>
 									<div class="author">
-										<md-checkbox  md-no-ink ng-checked aria-label="Laëtitia">Laëtitia</md-checkbox>
+										<md-checkbox  md-no-ink ng-checked aria-label="Laëtitia" ng-model="create.chkBoxAuthors.laetitia">Laëtitia</md-checkbox>
 									</div>
 									<div class="author">
-										<md-checkbox  md-no-ink ng-checked aria-label="Claire">Claire</md-checkbox>
+										<md-checkbox  md-no-ink ng-checked aria-label="Claire" ng-model="create.chkBoxAuthors.claire">Claire</md-checkbox>
 									</div>
 									<div class="author">
-										<md-checkbox  md-no-ink ng-checked aria-label="Matthias">Matthias</md-checkbox>
+										<md-checkbox  md-no-ink ng-checked aria-label="Matthias" ng-model="create.chkBoxAuthors.matthias">Matthias</md-checkbox>
 									</div>
 									<div class="author">
-										<md-checkbox  md-no-ink ng-checked aria-label="Victor">Victor</md-checkbox>
+										<md-checkbox  md-no-ink ng-checked aria-label="Victor" ng-model="create.chkBoxAuthors.victor">Victor</md-checkbox>
 									</div>
 								</form>
 							</div>
@@ -111,7 +111,7 @@
 				<!-- BOUTON ENREGISTRER -->
 				<div class="row">
 					<div class="save-form col-lg-12">
-						<input type="submit" value="Enregistrer">			
+						<input type="submit" value="Enregistrer" ng-click="create.save()">			
 					</div>
 				</div>
 			</form>	 
