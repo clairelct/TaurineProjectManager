@@ -1,5 +1,5 @@
 // Fonctionnalité : Formulaire création projet
-function CreateCtrl(){
+function CreateCtrl(filterFilter){
 	const create = this;
 
 	create.message = "Hello create !";
@@ -8,68 +8,45 @@ function CreateCtrl(){
 	create.newProject = {
 		id: null,
 		title: "Mon titre",
-		domains: {
-			print: true,
-			webdesign: false,
-			motiondesign: false,
-			webdeveloppment: false
-		},
+		domains: [],
 		client: "Cartoon Network",
 		startDate:"",
 		endDate:"",
 		brief: "Lorem ipsum dolor sit amet consectetur adisciping elit !",
-		authors: {
-			jérôme: true,
-			katell: false,
-			sabrina: false,
-			pascal: true,
-			laëtitia: false,
-			claire: false,
-			matthias: false,
-			victor: false
-		}
-	}
+		authors: []
+	};
 
-	// create.checkBoxAuthors = [
-	// 	{
-	// 		"name": "Jérôme",
-	// 		"selected": true
-	// 	},
-	// 	{
-	// 		"name": "Katell",
-	// 		"selected": false
-	// 	},
-	// 	{
-	// 		"name": "Sabrina",
-	// 		"selected": false
-	// 	},
-	// 	{
-	// 		"name": "Pascal",
-	// 		"selected": false
-	// 	},
-	// 	{
-	// 		"name": "Laëtitia",
-	// 		"selected": false
-	// 	},
-	// 	{
-	// 		"name": "Claire",
-	// 		"selected": false
-	// 	},
-	// 	{
-	// 		"name": "Matthias",
-	// 		"selected": false
-	// 	},
-	// 	{
-	// 		"name": "Victor",
-	// 		"selected": false
-	// 	}
+	// create.authors = [
+	//  { name: 'Jérôme', selected: true},
+	//  { name: 'Katell', selected: false},
+	//  { name: 'Pascal', selected: false},
+	//  { name: 'Claire', selected: false}
 	// ];
 
+	create.checkBoxDomain = {
+		print: false,
+		webdesign: false,
+		motiondesign: false,
+		webdeveloppment: false
+	};
 
+	create.checkBoxAuthors = {
+		jerome: false,
+		katell: false,
+		sabrina: false,
+		pascal: false,
+		laetitia: false,
+		claire: false,
+		matthias: false,
+		victor: false
+	};
 
-	// puis push dans create.newProject
+	// si true, push valeur de l'input dans array de create.newProject.authors
+	
 
-	console.log(create.checkBoxAuthors.jerome);
-}
+	// puis push dans create.newProject, 
+	//elem. true -> valeur de l'input
+	//https://openclassrooms.com/forum/sujet/angularjs-ajout-de-donnees-dans-un-fichier-json
+};
 
 export default CreateCtrl

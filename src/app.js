@@ -10,5 +10,5 @@ import HomeCtrl from './home/home.controller.js'
 	angular
 	    .module('myApp', ['ui.router','ngMaterial'])
 	    .config(config)
-	    .controller('CreateCtrl', CreateCtrl)
+	    .controller('CreateCtrl', ['filterFilter', CreateCtrl])
 	    .controller('HomeCtrl', HomeCtrl);
