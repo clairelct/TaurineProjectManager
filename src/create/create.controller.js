@@ -1,5 +1,5 @@
 // Fonctionnalité : Formulaire création projet
-function CreateCtrl(filterFilter){
+function CreateCtrl(){
 	const create = this;
 
 	create.message = "Hello create !";
