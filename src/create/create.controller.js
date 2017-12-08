@@ -6,30 +6,70 @@ function CreateCtrl(){
 
 	// objet à insérer dans array de projets
 	create.newProject = {
+		id: null,
 		title: "Mon titre",
+		domains: {
+			print: true,
+			webdesign: false,
+			motiondesign: false,
+			webdeveloppment: false
+		},
 		client: "Cartoon Network",
-		authors: [],
-		brief: "Lorem ipsum dolor sit amet consectetur adisciping elit !"
+		startDate:"",
+		endDate:"",
+		brief: "Lorem ipsum dolor sit amet consectetur adisciping elit !",
+		authors: {
+			jérôme: true,
+			katell: false,
+			sabrina: false,
+			pascal: true,
+			laëtitia: false,
+			claire: false,
+			matthias: false,
+			victor: false
+		}
 	}
 
-	create.chkBoxAuthors = {
-		jerome: false,
-		katell: false,
-		sabrina: false,
-		pascal: false,
-		laetitia: false,
-		claire: false,
-		matthias: false,
-		victor: false
-	}
+	// create.checkBoxAuthors = [
+	// 	{
+	// 		"name": "Jérôme",
+	// 		"selected": true
+	// 	},
+	// 	{
+	// 		"name": "Katell",
+	// 		"selected": false
+	// 	},
+	// 	{
+	// 		"name": "Sabrina",
+	// 		"selected": false
+	// 	},
+	// 	{
+	// 		"name": "Pascal",
+	// 		"selected": false
+	// 	},
+	// 	{
+	// 		"name": "Laëtitia",
+	// 		"selected": false
+	// 	},
+	// 	{
+	// 		"name": "Claire",
+	// 		"selected": false
+	// 	},
+	// 	{
+	// 		"name": "Matthias",
+	// 		"selected": false
+	// 	},
+	// 	{
+	// 		"name": "Victor",
+	// 		"selected": false
+	// 	}
+	// ];
+
 
 
 	// puis push dans create.newProject
 
-	create.save = function(){
-		console.log('Enregistré !');
-	}
-
+	console.log(create.checkBoxAuthors.jerome);
 }
 
 export default CreateCtrl

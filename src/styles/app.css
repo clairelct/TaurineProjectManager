@@ -211,8 +211,10 @@ header > div:nth-of-type(2){
 }
 .light-theme .save-form input:hover {color: #ffffff;}
 
-.light-theme #authors-proj md-checkbox.md-checked .md-label {color:#ffffff;}
-.light-theme #authors-proj md-checkbox:not(.md-checked) .md-icon {border-color: #c4c3cf;}
+.light-theme .authors-list fieldset label{background-color: #ffffff;}
+.light-theme .authors-list fieldset input:checked + label {color:#ffffff!important;}
+
+.light-theme .checkboxDomain fieldset label {background-color: #aaa9b7;}
 
 /****/
 
@@ -232,15 +234,18 @@ header > div:nth-of-type(2){
 	align-items: center;
 	margin-left: 10px;
 }
-.btn-window a p {margin-right: 10px;}
+.btn-window a p {
+	margin-right: 10px;
+	font-weight: bold;
+}
 /****************/
 /*	Bloc INFOS  */
 /****************/
 
-.checkboxDomain fieldset{
+.checkboxDomain fieldset, .authors-list fieldset{
 	border: 0;
-	padding: 0; margin: 10px 0 0 0;
-/*	width: 50px;*/
+	padding: 0;
+	margin: 10px 0 0 0;
 	max-width: 100%;
 	font-size: 0;
 	position: relative;
@@ -252,24 +257,20 @@ header > div:nth-of-type(2){
 }
 
 .checkboxDomain fieldset label {
-	/* label used as button */
-/*	width: 105px;
-	height: 55px;
-	line-height: 55px;*/
 	display: inline-block;
     text-align: center;
     font-size: 14px;
-    font-weight: normal;
+    font-weight: bold;
     margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 25px;
     cursor: pointer;
     color: #FFF;
-    background: #9695a5;
+    background: #63616e;
     padding: 5px 18px;	
 }
 
-.checkboxDomain fieldset input {
+.checkboxDomain fieldset input, .authors-list fieldset input {
 	border: 0; 
 	clip: rect(0 0 0 0); 
 	height: 1px; margin: -1px; 
@@ -279,16 +280,19 @@ header > div:nth-of-type(2){
 	width: 1px;
 }
 
-.checkboxDomain fieldset input:checked + label {
+.checkboxDomain fieldset input:checked + label,
+.authors-list fieldset input:checked + label  {
 	background: #e33141;
 	color: #fff;
 }
 
-.checkboxDomain fieldset input:focus ~ label {
+.checkboxDomain fieldset input:focus ~ label,
+.authors-list fieldset input:focus ~ label {
 	box-shadow: none;
 	outline: 0 none;
 }
-.checkboxDomain fieldset input:focus ~ .focus {
+.checkboxDomain fieldset input:focus ~ .focus,
+.authors-list fieldset input:focus ~ .focus {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -395,7 +399,7 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 	margin-left: 7px;
 	width: 40px;
 	height: 40px;
-	background-color: #9695a5;
+	background-color: #63616e;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
@@ -425,38 +429,25 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 #authors-proj .legend {margin-bottom: 0px;}
 
 /* checkbox auteurs */
-#authors-proj md-checkbox {color: #fff!important;}
-#authors-proj md-checkbox:not(.md-checked) .md-icon {border-color: rgba(255, 255, 255, .1);}
-#authors-proj md-checkbox {
-	margin-bottom: 0;
-	min-width: initial;
-	width: 100%;
-	padding: 12px 20px;
+.authors-list fieldset label {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0!important;
+    cursor: pointer;
+    color: #FFF;
+    background: #27262c;
+    padding: 8px 25px;	
 }
-#authors-proj md-checkbox .md-container {
-	left: auto;
-    right: 20px;
-}
-#authors-proj md-checkbox .md-label {
-	margin-right: 30px;
-    margin-left: 0;
-}
+.authors-list fieldset {margin: 10px 0;}
+.authors-list fieldset input + label i{display: none;}
+.authors-list fieldset input:checked + label i {display: inline-block;}
 
-#authors-proj .author > div {
-	width: 20px;
-	height: 20px;
-	border-radius: 20px;
-	background-color: red;
-}
-#authors-proj .author .md-checked, #authors-proj md-checkbox.md-checked .md-icon {
-	background-color: #e33141;
-}
-#authors-proj md-checkbox.md-checked .md-ink-ripple {color:#e33141!important;}
-#authors-proj md-checkbox.md-checked .md-label {font-weight: bold;}
-#authors-proj md-checkbox .md-icon {
-	-webkit-transition: none!important;
-    transition: none!important;
-}
+
+
 /*** BOUTON ENREGISTRER ***/
 
 .save-form {margin: 50px 0 20px;}
