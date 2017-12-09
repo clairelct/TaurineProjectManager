@@ -59,10 +59,10 @@
 
 	<!-- Affichage projets -->
 	<ul id="home-ul-projects">
-		<li ng-repeat="projet in home.projects">
+		<li ng-repeat="projet in home.getItem(localStorage.get(result))">
 			<div></div>
 			<div>
-				<p>{{projet.name}}</p>
+				<p>{{projet.title}}</p>
 				<p>Domaine : {{projet.domain}}</p>
 			</div>
 			<div>
@@ -70,7 +70,7 @@
 				<p>Deadline : {{projet.endDate}}</p>
 			</div>	
 			<div>
-				<p>{{projet.authors[0]}}</p>
+				<p>{{projet.authorsSelected}}</p>
 			</div>		
 		</li>
 	</ul>

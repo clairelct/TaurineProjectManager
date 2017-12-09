@@ -1,52 +1,36 @@
 // Fonctionnalité : Formulaire création projet
-function CreateCtrl(){
+function CreateCtrl($firebaseObject){
 	const create = this;
 
-	create.message = "Hello create !";
+	var ref = firebase.database().ref();
 
-	// objet à insérer dans array de projets
+	console.log(ref);
+	// pusher cet objet 'final' dans JSON 
 	create.newProject = {
 		id: null,
-		title: "Mon titre",
-		domains: [],
-		client: "Cartoon Network",
+		title: "",
+		domainsSelected: [],
+		client: "",
 		startDate:"",
 		endDate:"",
-		brief: "Lorem ipsum dolor sit amet consectetur adisciping elit !",
-		authors: []
+		brief: "",
+		authorsSelected: []
 	};
 
-	// create.authors = [
-	//  { name: 'Jérôme', selected: true},
-	//  { name: 'Katell', selected: false},
-	//  { name: 'Pascal', selected: false},
-	//  { name: 'Claire', selected: false}
-	// ];
+	create.domains = ["print","webdesign","motiondesign","webdeveloppment"]
+	create.authors = ["jerome","katell","sabrina","pascal","laetitia","claire","matthias","victor"]
 
-	create.checkBoxDomain = {
-		print: false,
-		webdesign: false,
-		motiondesign: false,
-		webdeveloppment: false
-	};
+	// Submit
+	create.save = function(){
+		if (create.newProject) {
+			console.log(create.newProject);
+			localStorageService.set('result', create.newProject);
+		}
+	}
 
-	create.checkBoxAuthors = {
-		jerome: false,
-		katell: false,
-		sabrina: false,
-		pascal: false,
-		laetitia: false,
-		claire: false,
-		matthias: false,
-		victor: false
-	};
 
-	// si true, push valeur de l'input dans array de create.newProject.authors
-	
+}; 
 
-	// puis push dans create.newProject, 
-	//elem. true -> valeur de l'input
-	//https://openclassrooms.com/forum/sujet/angularjs-ajout-de-donnees-dans-un-fichier-json
-};
+
 
 export default CreateCtrl

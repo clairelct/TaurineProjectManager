@@ -16,7 +16,7 @@
 		<!-- <div class="clearfix"></div> -->
 		
 
-			<form  id="createForm" action="" method="post" class="col-lg-12">
+			<form  id="createForm" name="createForm" ng-submit="create.save()" class="col-lg-12">
 				<div class="row">
 					<!-- /// BLOC GAUCHE -->
 					<div class="col-lg-9">
@@ -29,11 +29,45 @@
 							<div class="checkboxDomain">
 								<label for="" class="legend">Domaine</label>
 								<fieldset>
-									<input type="checkbox" ng-model="create.checkBoxDomain.print" name="domain" value="print" id="box1"><label for="box1">Print</label> 
-									<input type="checkbox" ng-model="create.checkBoxDomain.webdesign" name="domain" value="webdesign" id="box2"><label for="box2">Webdesign</label>
-									<input type="checkbox" ng-model="create.checkBoxDomain.motiondesign" name="domain" value="motiondesign" id="box3"><label for="box3">Motion Design</label>
-									<input type="checkbox" ng-model="create.checkBoxDomain.webdeveloppment" name="domain" value="webdeveloppement" id="box4"><label for="box4">Web Developpment</label>
-									<!-- used to show when fieldset is focused <div class="focus"></div>-->
+									<label ng-repeat="domain in create.domains">
+										<input 
+										type="checkbox"
+										checklist-model="create.newProject.domainsSelected"
+										name="domain"
+										checklist-value="domain"
+										>
+										{{domain}}
+										
+									</label>
+									<!--<input 
+									type="checkbox"
+									checklist-model="create.newProject.domains[0]"
+									name="domain"
+									checklist-value="create.newProject.domains[0]"
+									id="box1">
+									<label for="box1">{{create.newProject.domains[0]}}</label> 
+
+									<input 
+									type="checkbox" 
+									checklist-model="create.newProject.domains[1]" 
+									name="domain" 
+									checklist-value="create.newProject.domains[1]" 
+									id="box2">
+									<label for="box2">{{create.newProject.domains[1].toString()}}</label>
+
+									<input type="checkbox" 
+									checklist-model="create.newProject.domains[2]" 
+									name="domain" checklist-value="create.newProject.domains[2]" 
+									id="box3">
+									<label for="box3">{{create.newProject.domains[2]}}</label>
+
+									<input 
+									type="checkbox" 
+									checklist-model="create.newProject.domains[3]" 
+									name="domain" checklist-value="create.newProject.domains[3]" 
+									id="box4">
+									<label for="box4">{{create.newProject.domains[3]}}</label>-->
+						
 								</fieldset>
 							</div>
 							<div class="client-delay">
@@ -46,11 +80,11 @@
 									<div>
 										<div>
 											<p>Début</p>
-											<md-datepicker ng-model="date1" md-placeholder="Entrer une date"></md-datepicker>
+											<md-datepicker ng-model="create.newProject.startDate" md-placeholder="Entrer une date"></md-datepicker>
 										</div>
 										<div>
 											<p>Fin</p>
-											<md-datepicker ng-model="date2" md-placeholder="Entrer une date"></md-datepicker>
+											<md-datepicker ng-model="create.newProject.endDate" md-placeholder="Entrer une date"></md-datepicker>
 										</div>
 									</div>								
 								</div>
@@ -60,7 +94,7 @@
 						<!-- Bloc BRIEF-->
 						<section id="brief-proj">
 							<label for="" class="legend">Brief / Commentaire</label>
-							<textarea placeholder="Description du projet...">{{create.newProject.brief}}</textarea> 
+							<textarea placeholder="Description du projet..." ng-model="create.newProject.brief">{{create.newProject.brief}}</textarea> 
 						</section>
 					</div><!-- ./end col-lg-9 -->
 
@@ -79,7 +113,18 @@
 							<div><p class="legend">Auteur(s) du projet</p></div>
 							<div class="authors-list">								
 								<fieldset>
-									<input type="checkbox" ng-model="create.checkBoxAuthors.jerome" ng-change="create.collect()" name="author" value="Jérôme" id="box-jerome">
+									<label ng-repeat="author in create.authors">
+										<input 
+										type="checkbox"
+										checklist-model="create.newProject.authorsSelected"
+										name="author"
+										checklist-value="author"
+										>
+										{{author}}
+										
+									</label>
+
+									<!-- <input type="checkbox" ng-model="create.checkBoxAuthors.jerome" ng-change="create.collect()" name="author" value="Jérôme" id="box-jerome">
 									<label for="box-jerome">Jérôme <i class="fa fa-check" aria-hidden="true"></i></label>
 									<input type="checkbox" ng-model="create.checkBoxAuthors.katell" name="author" value="Katell" id="box-katell">
 									<label for="box-katell">Katell <i class="fa fa-check" aria-hidden="true"></i></label>
@@ -94,16 +139,7 @@
 									<input type="checkbox" ng-model="create.checkBoxAuthors.matthias" name="author" value="Matthias" id="box-matthias">
 									<label for="box-matthias">Matthias <i class="fa fa-check" aria-hidden="true"></i></label>
 									<input type="checkbox" ng-model="create.checkBoxAuthors.victor" name="author" value="Victor" id="box-victor">
-									<label for="box-victor">Victor <i class="fa fa-check" aria-hidden="true"></i></label>
-									<!-- <label ng-repeat="author in create.authors" for="box-auth">
-										  <input
-										  		id="box-auth"
-											    type="checkbox"
-											    name="selectedAuthor[]"
-											    value="{{author.name}}"
-											    ng-model="author.selected"
-										    > {{author.name}} {{author.selected}}
-									</label> -->
+									<label for="box-victor">Victor <i class="fa fa-check" aria-hidden="true"></i></label> -->
 								</fieldset>
 								
 							</div>
@@ -115,7 +151,7 @@
 				<!-- BOUTON ENREGISTRER -->
 				<div class="row">
 					<div class="save-form col-lg-12">
-						<input type="submit" value="Enregistrer" ng-click="create.save()">			
+						<input type="submit" value="Enregistrer">			
 					</div>
 				</div>
 
