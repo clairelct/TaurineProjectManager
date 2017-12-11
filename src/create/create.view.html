@@ -29,7 +29,7 @@
 							<div class="checkboxDomain">
 								<label for="" class="legend">Domaine</label>
 								<fieldset>
-									<label ng-repeat="domain in create.domains">
+									<label ng-repeat="domain in create.domains" ng-class="{ 'label-checked' : create.newProject.domainsSelected.includes(domain) }">
 										<input 
 										type="checkbox"
 										checklist-model="create.newProject.domainsSelected"
@@ -85,7 +85,7 @@
 							<div><p class="legend">Auteur(s) du projet</p></div>
 							<div class="authors-list">								
 								<fieldset>
-									<label ng-repeat="author in create.authors" ng-class="{ 'label-author' : create.newProject.authorsSelected.includes(author) }">
+									<label ng-repeat="author in create.authors" ng-class="{ 'label-checked' : create.newProject.authorsSelected.includes(author) }">
 										<input 
 										type="checkbox"
 										checklist-model="create.newProject.authorsSelected"

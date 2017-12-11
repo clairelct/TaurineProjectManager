@@ -35,6 +35,12 @@ h2 {
     margin: 0;
     font-weight: bold;
 }
+h3{
+	font-size: 20px!important;
+	font-weight: bold;
+	margin-bottom: 6px;
+	margin-top: 0;
+}
 p {margin: 0;}
 
 
@@ -150,7 +156,7 @@ header > div:nth-of-type(2){
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: flex-start;
-	padding: 0!important;
+	padding: 70px 0;
 	list-style-type: none;
 }
 #home-ul-projects li {
@@ -158,17 +164,21 @@ header > div:nth-of-type(2){
 	width: 255px;
 }
 
-#home-ul-projects li div {
+#home-ul-projects li > div {
 	background-color: #26262c;
 	padding: 20px;
 	border-bottom: 1px solid rgb(54, 54, 65);
 }
 
-#home-ul-projects li div:nth-of-type(1){
+#home-ul-projects .project-img{
 	border: none;
 	height: 135px;
 	width: auto;
 	background-color: #9595a5;
+}
+#home-ul-projects .project-title {min-height:111px;}
+#home-ul-projects .project-details div:nth-of-type(1){
+	margin-bottom: 15px;
 }
 
 /****************************/
@@ -188,7 +198,7 @@ header > div:nth-of-type(2){
 .light-theme #brief-proj textarea, .light-theme #infos-proj .titre input,
 .light-theme  #infos-proj .client input, .light-theme .md-datepicker-input,
 .light-theme header,.light-theme header a, .light-theme .authors-list fieldset label,
-.light-theme .delay > div > div, .light-theme #authors-proj md-checkbox {color:#3c3b41!important;}
+.light-theme .delay > div > div, .light-theme #authors-proj md-checkbox {color:#3c3b41;}
 
 .light-theme .md-datepicker-input {font-weight: normal;
 }
@@ -285,7 +295,7 @@ header > div:nth-of-type(2){
 	color: #fff;
 }
 
-.checkboxDomain fieldset input:focus ~ label,
+/*.checkboxDomain fieldset input:focus ~ label,
 .authors-list fieldset input:focus ~ label {
 	box-shadow: none;
 	outline: 0 none;
@@ -302,7 +312,12 @@ header > div:nth-of-type(2){
 	border: 1px solid #35a3e8;
 	box-shadow: 0 0 10px #35a3e8;
 	z-index:-1;
-}
+}*/
+
+.authors-list fieldset label.label-checked,
+.checkboxDomain fieldset label.label-checked {background: #e33140;}
+
+.light-theme .authors-list fieldset label.label-checked {color: #ffffff;}
 
 #infos-proj .titre input, #infos-proj .client input {
 	display: block;
@@ -445,7 +460,6 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 .authors-list fieldset input + label i{display: none;}
 .authors-list fieldset input:checked + label i {display: inline-block;}
 
-.light-theme .authors-list fieldset label.label-author {background: red;}
 
 
 /*** BOUTON ENREGISTRER ***/

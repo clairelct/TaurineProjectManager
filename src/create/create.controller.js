@@ -14,7 +14,7 @@ function CreateCtrl(){
 		authorsSelected: []
 	};
 
-	create.domains = ["print","webdesign","motiondesign","webdeveloppment"]
+	create.domains = ["Print","Webdesign","Motiondesign","WebDeveloppment"]
 	create.authors = ["jerome","katell","sabrina","pascal","laetitia","claire","matthias","victor"]
 
 	create.test = function(){

@@ -55,14 +55,21 @@
 	<!-- Affichage projets -->
 	<ul id="home-ul-projects">
 		<li ng-repeat="projet in home.fakeData | filter : home.filterValue">
-			<div></div>
-			<div>
-				<p>{{projet.title}}</p>
-				<p>Domaine : {{projet.domainsSelected.join(', ')}}</p>
+			<div class="project-img"></div>
+			<div class="project-title">
+				<h3>{{projet.title}}</h3>
+				<p>{{projet.domainsSelected.join(', ')}}</p>
 			</div>
-			<div>
-				<p>Client : {{projet.client}}</p>
-				<p>Deadline : {{projet.endDate | date: 'dd/MM/yyyy'}}</p>
+			<div class="project-details">
+				<div>
+					<p class="legend">Client : </p>
+					<p class="bold">{{projet.client}}</p>
+				</div>
+				<div>
+					<p class="legend">Deadline :</p> 
+					<p class="bold">{{projet.endDate | date: 'dd/MM/yyyy'}}</p>
+				</div>
+				
 			</div>	
 			<div>
 				<p>Auteurs : {{projet.authorsSelected.join(', ')}}</p>
