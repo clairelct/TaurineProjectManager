@@ -39,34 +39,6 @@
 										{{domain}}
 										
 									</label>
-									<!--<input 
-									type="checkbox"
-									checklist-model="create.newProject.domains[0]"
-									name="domain"
-									checklist-value="create.newProject.domains[0]"
-									id="box1">
-									<label for="box1">{{create.newProject.domains[0]}}</label> 
-
-									<input 
-									type="checkbox" 
-									checklist-model="create.newProject.domains[1]" 
-									name="domain" 
-									checklist-value="create.newProject.domains[1]" 
-									id="box2">
-									<label for="box2">{{create.newProject.domains[1].toString()}}</label>
-
-									<input type="checkbox" 
-									checklist-model="create.newProject.domains[2]" 
-									name="domain" checklist-value="create.newProject.domains[2]" 
-									id="box3">
-									<label for="box3">{{create.newProject.domains[2]}}</label>
-
-									<input 
-									type="checkbox" 
-									checklist-model="create.newProject.domains[3]" 
-									name="domain" checklist-value="create.newProject.domains[3]" 
-									id="box4">
-									<label for="box4">{{create.newProject.domains[3]}}</label>-->
 						
 								</fieldset>
 							</div>
@@ -113,33 +85,17 @@
 							<div><p class="legend">Auteur(s) du projet</p></div>
 							<div class="authors-list">								
 								<fieldset>
-									<label ng-repeat="author in create.authors">
+									<label ng-repeat="author in create.authors" ng-class="{ 'label-author' : create.newProject.authorsSelected.includes(author) }">
 										<input 
 										type="checkbox"
 										checklist-model="create.newProject.authorsSelected"
 										name="author"
 										checklist-value="author"
+										ng-click="create.test()"
 										>
-										{{author}}
+										{{author }}
 										
 									</label>
-
-									<!-- <input type="checkbox" ng-model="create.checkBoxAuthors.jerome" ng-change="create.collect()" name="author" value="Jérôme" id="box-jerome">
-									<label for="box-jerome">Jérôme <i class="fa fa-check" aria-hidden="true"></i></label>
-									<input type="checkbox" ng-model="create.checkBoxAuthors.katell" name="author" value="Katell" id="box-katell">
-									<label for="box-katell">Katell <i class="fa fa-check" aria-hidden="true"></i></label>
-									<input type="checkbox" ng-model="create.checkBoxAuthors.sabrina" name="author" value="Sabrina" id="box-sabrina">
-									<label for="box-sabrina">Sabrina <i class="fa fa-check" aria-hidden="true"></i></label>
-									<input type="checkbox" ng-model="create.checkBoxAuthors.pascal" name="author" value="Pascal" id="box-pascal">
-									<label for="box-pascal">Pascal <i class="fa fa-check" aria-hidden="true"></i></label>
-									<input type="checkbox" ng-model="create.checkBoxAuthors.laetitia" name="author" value="Laëtitia" id="box-laetitia">
-									<label for="box-laetitia">Laëtitia <i class="fa fa-check" aria-hidden="true"></i></label>
-									<input type="checkbox" ng-model="create.checkBoxAuthors.claire" name="author" value="Claire" id="box-claire">
-									<label for="box-claire">Claire <i class="fa fa-check" aria-hidden="true"></i></label>
-									<input type="checkbox" ng-model="create.checkBoxAuthors.matthias" name="author" value="Matthias" id="box-matthias">
-									<label for="box-matthias">Matthias <i class="fa fa-check" aria-hidden="true"></i></label>
-									<input type="checkbox" ng-model="create.checkBoxAuthors.victor" name="author" value="Victor" id="box-victor">
-									<label for="box-victor">Victor <i class="fa fa-check" aria-hidden="true"></i></label> -->
 								</fieldset>
 								
 							</div>

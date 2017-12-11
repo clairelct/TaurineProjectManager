@@ -43,7 +43,8 @@ function config($stateProvider, $locationProvider, $urlRouterProvider, $mdDateLo
 
 		    return day + '/' + (monthIndex + 1) + '/' + year;
 			}
-		  };
+		  };		
+
 			    
 	}
 	

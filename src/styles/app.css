@@ -8,8 +8,13 @@
 /***********************************/
 body {
 	background-color: #18181d;
+	height: auto;
 	color: #ffffff;
 }
+
+/* thats because ng-inspector suxx */
+.ngi-app { color: black; }
+
 nav {
 	background-color: #26262c;
 	padding: 15px 0;
@@ -125,12 +130,11 @@ header > div:nth-of-type(2){
 
 /*** FILTERS ***/
 #form-filters {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
 	background-color: #26262c;
 	padding: 25px 0;
+	border-bottom: 3px solid #e33140;
 }
+#form-filters.row {margin: 0!important;}
 #selects-filters {
 	display: flex;
 	flex-direction: row;
@@ -141,22 +145,17 @@ header > div:nth-of-type(2){
 	padding: 0 20px;
 }
 
-#btn-filters > input {
-	border-radius: 50px;
-	background-color: #dd3340;
-	border: none;
-	padding: 8px 15px;
-}
-
 /*** LISTE ***/
 #home-ul-projects {
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: flex-start;
 	padding: 0!important;
 	list-style-type: none;
 }
 #home-ul-projects li {
-	margin: 0 20px;
+	margin: 0 15px;
+	width: 255px;
 }
 
 #home-ul-projects li div {
@@ -446,6 +445,7 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 .authors-list fieldset input + label i{display: none;}
 .authors-list fieldset input:checked + label i {display: inline-block;}
 
+.light-theme .authors-list fieldset label.label-author {background: red;}
 
 
 /*** BOUTON ENREGISTRER ***/

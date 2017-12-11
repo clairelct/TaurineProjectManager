@@ -1,11 +1,8 @@
 // Fonctionnalité : Formulaire création projet
-function CreateCtrl($firebaseObject){
+function CreateCtrl(){ 
 	const create = this;
-
-	var ref = firebase.database().ref();
-
-	console.log(ref);
-	// pusher cet objet 'final' dans JSON 
+	
+	// pusher cet objet 'final' dans Firebase
 	create.newProject = {
 		id: null,
 		title: "",
@@ -20,14 +17,16 @@ function CreateCtrl($firebaseObject){
 	create.domains = ["print","webdesign","motiondesign","webdeveloppment"]
 	create.authors = ["jerome","katell","sabrina","pascal","laetitia","claire","matthias","victor"]
 
-	// Submit
-	create.save = function(){
-		if (create.newProject) {
-			console.log(create.newProject);
-			localStorageService.set('result', create.newProject);
-		}
+	create.test = function(){
+		console.log(create.newProject.authorsSelected);
 	}
 
+	// Submit : Envoyer donnée à Firebase
+	create.save = function($firebaseObject){
+		if (create.newProject) {
+			console.log(create.newProject);
+		}
+	}
 
 }; 
 
