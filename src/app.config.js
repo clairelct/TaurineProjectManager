@@ -26,6 +26,13 @@ function config($stateProvider, $locationProvider, $urlRouterProvider, $mdDateLo
 	            controller  : 'CreateCtrl',
 	            controllerAs: 'create'
 	        })
+	        .state({
+	            name        : 'view-proj',
+	            url         : '/view-proj/:projectId',
+	            templateUrl : 'src/view-proj/view-proj.view.html',
+	            controller  : 'viewProjCtrl',
+	            controllerAs: 'vproj'
+	        })
 		
 	    // Si aucune route n'est atteinte, on charge par defaut celle-ci (la home)
 		$urlRouterProvider.otherwise('/')

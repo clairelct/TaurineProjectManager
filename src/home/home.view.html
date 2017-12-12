@@ -42,10 +42,10 @@
 			<div>
 				<label class="legend">Client</label>
 				<select name="" id="selectClient" ng-model="home.filterValue.client">
-					<option value="m6pub" selected>M6 Publicité</option>
-					<option value="warnerbros">Warner Bros</option>
-					<option value="armani">Armani</option>
-					<option value="w9">W9</option>
+					<option value="M6 Publicité" selected>M6 Publicité</option>
+					<option value="Warner Bros">Warner Bros</option>
+					<option value="Armani">Armani</option>
+					<option value="TF1-Téléshopping">TF1-Téléshopping</option>
 				</select>	
 			</div>		
 		</div><!-- ./ end selects-filters -->
@@ -54,7 +54,9 @@
 
 	<!-- Affichage projets -->
 	<ul id="home-ul-projects">
+		
 		<li ng-repeat="projet in home.fakeData | filter : home.filterValue">
+			<a href="/#/view-proj/{{projet.id}}">
 			<div class="project-img"></div>
 			<div class="project-title">
 				<h3>{{projet.title}}</h3>
@@ -71,10 +73,15 @@
 				</div>
 				
 			</div>	
-			<div>
-				<p>Auteurs : {{projet.authorsSelected.join(', ')}}</p>
-			</div>		
-		</li>
+			<div class="project-author">
+				<p>Auteurs :</p>
+				<div ng-repeat="author in projet.authorsSelected">
+					{{author.name}}
+					<img ng-src="src/img/{{author.frame}}" alt="Description"/>
+				</div>
+			</div>	
+		</a>		
+		</li>		
 	</ul>
 	
 

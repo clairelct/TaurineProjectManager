@@ -1,0 +1,20 @@
+<div class="container" ng-controller="viewProjCtrl as vproj">
+	<header> <!-- Transformer header en directive ? -->
+			<div class="header-title">
+				<h2>Projet</h2>
+				<p>Visualiser le projet</p>
+			</div>
+			<div class="btn-window">
+				<a ui-sref="home">
+					<p>Fermer</p>				
+				<i class="fa fa-window-close fa-2x" aria-hidden="true"></i>
+				</a>
+			</div>
+		</header>
+
+
+	<div >
+		<p>Titre : {{vproj.projet.title}}</p>
+		<p>Domaine : {{vproj.projet.domainsSelected}}</p>
+	</div>
+</div><!-- ./end container -->

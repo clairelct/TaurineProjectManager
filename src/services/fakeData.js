@@ -10,16 +10,34 @@ export default [
 		startDate:Date.now() - 1000*60*60*24*10,
 		endDate:Date.now() + 1000*60*60*24*10,
 		brief: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla ipsum earum nostrum maxime, nesciunt odio dolor minus labore blanditiis cum asperiores iure, nemo aperiam, id assumenda reiciendis vero! Minima, voluptatibus!",
-		authorsSelected: ["jerome", "katell"]
-	},{
-		id: 1,
+		authorsSelected: [
+		{
+			name : "jerome",
+			frame : "author_frame_jerome.png"
+		},
+		{
+			name : "katell",
+			frame : "author_frame_katell.png"
+		}]
+	},
+
+	{
+		id: 2,
 		title: "Création de site",
 		domainsSelected: ["Webdesign","Webdeveloppment"],
 		client: "Tag Barber Shop",
 		startDate:Date.now() - 1000*60*60*24*10,
 		endDate:Date.now() + 1000*60*60*24*10,
 		brief: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla ipsum earum nostrum maxime, nesciunt odio dolor minus labore blanditiis cum asperiores iure, nemo aperiam, id assumenda reiciendis vero! Minima, voluptatibus!",
-		authorsSelected: ["jerome", "katell"]
+		authorsSelected: [
+		{
+			name : "jerome",
+			frame : "author_frame_jerome.png"
+		},
+		{
+			name : "katell",
+			frame : "author_frame_katell.png"
+		}]
 	},{
 		id: 1,
 		title: "Refonte de site",

@@ -156,15 +156,15 @@ header > div:nth-of-type(2){
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: flex-start;
-	padding: 70px 0;
+	padding: 50px 0;
 	list-style-type: none;
 }
 #home-ul-projects li {
-	margin: 0 15px;
+	margin: 15px;
 	width: 255px;
 }
 
-#home-ul-projects li > div {
+#home-ul-projects li a > div {
 	background-color: #26262c;
 	padding: 20px;
 	border-bottom: 1px solid rgb(54, 54, 65);
@@ -180,6 +180,11 @@ header > div:nth-of-type(2){
 #home-ul-projects .project-details div:nth-of-type(1){
 	margin-bottom: 15px;
 }
+#home-ul-projects .project-author  div {
+	width: 40px;
+	height: 40px;
+}
+#home-ul-projects .project-author img {width: 100%}
 
 /****************************/
 /*   TEMPLATE FORM CREATE   */
@@ -220,7 +225,8 @@ header > div:nth-of-type(2){
 }
 .light-theme .save-form input:hover {color: #ffffff;}
 
-.light-theme .authors-list fieldset label{background-color: #ffffff;}
+.light-theme .authors-list fieldset > div {background-color: #ffffff;}
+.light-theme .authors-list fieldset .label-checked label {color: #ffffff;}
 .light-theme .authors-list fieldset input:checked + label {color:#ffffff!important;}
 
 .light-theme .checkboxDomain fieldset label {background-color: #aaa9b7;}
@@ -295,29 +301,8 @@ header > div:nth-of-type(2){
 	color: #fff;
 }
 
-/*.checkboxDomain fieldset input:focus ~ label,
-.authors-list fieldset input:focus ~ label {
-	box-shadow: none;
-	outline: 0 none;
-}
-.checkboxDomain fieldset input:focus ~ .focus,
-.authors-list fieldset input:focus ~ .focus {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	margin: 5px;
-	padding: 5px;
-	outline: 0;
-	border: 1px solid #35a3e8;
-	box-shadow: 0 0 10px #35a3e8;
-	z-index:-1;
-}*/
-
-.authors-list fieldset label.label-checked,
+.authors-list fieldset div.label-checked,
 .checkboxDomain fieldset label.label-checked {background: #e33140;}
-
-.light-theme .authors-list fieldset label.label-checked {color: #ffffff;}
 
 #infos-proj .titre input, #infos-proj .client input {
 	display: block;
@@ -441,10 +426,12 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 	border-bottom: 1px solid #494853;
 }
 #authors-proj .legend {margin-bottom: 0px;}
+.authors-list fieldset > div {display: flex;}
 
 /* checkbox auteurs */
 .authors-list fieldset label {
 	display: flex;
+	flex-grow: 1;
 	justify-content: space-between;
 	align-items: center;
     text-align: left;
@@ -453,10 +440,10 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
     margin-bottom: 0!important;
     cursor: pointer;
     color: #FFF;
-    background: #27262c;
     padding: 8px 25px;	
 }
 .authors-list fieldset {margin: 10px 0;}
+.authors-list fieldset > div {background-color: #27262c;}
 .authors-list fieldset input + label i{display: none;}
 .authors-list fieldset input:checked + label i {display: inline-block;}
 
@@ -479,4 +466,15 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 }
 
 .save-form input:hover {background-color: #e33141;}
+
+/*****************************/
+/*   TEMPLATE VIEW-PROJECT   */
+/*****************************/
+
+#vp-bloc-1 {
+	
+}
+
+
+
 

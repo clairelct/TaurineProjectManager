@@ -85,7 +85,11 @@
 							<div><p class="legend">Auteur(s) du projet</p></div>
 							<div class="authors-list">								
 								<fieldset>
-									<label ng-repeat="author in create.authors" ng-class="{ 'label-checked' : create.newProject.authorsSelected.includes(author) }">
+									<div ng-repeat="author in create.authors" ng-class="{ 'label-checked' : create.newProject.authorsSelected.includes(author) }">
+									<div style="width:40px;height:40px;background-color: blue;">
+										<img ng-src="{{projet.authorsSelected.frame}}" alt="Photo de l'auteur"/>
+									</div>
+									<label>
 										<input 
 										type="checkbox"
 										checklist-model="create.newProject.authorsSelected"
@@ -93,9 +97,10 @@
 										checklist-value="author"
 										ng-click="create.test()"
 										>
-										{{author }}
+										{{author.name}}
 										
 									</label>
+									</div>
 								</fieldset>
 								
 							</div>
