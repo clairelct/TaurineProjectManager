@@ -1,10 +1,11 @@
 // Fonctionnalité : Formulaire création projet
-function CreateCtrl(){ 
+function CreateCtrl( $rootScope, $state ){ 
 	const create = this;
 	
 	// pusher cet objet 'final' dans Firebase
 	create.newProject = {
 		id: null,
+		projectImg: "thumbnail_project_frame.gif",
 		title: "",
 		domainsSelected: [],
 		client: "",
@@ -19,35 +20,35 @@ function CreateCtrl(){
 	create.authors = [
 		{
 			name : "jerome",
-			frame : "../src/img/author_frame_jerome.png"
+			frame : "author_frame_jerome.png"
 		},
 		{
 			name : "katell",
-			frame : "../src/img/author_frame_katell.png"
+			frame : "author_frame_katell.png"
 		},
 		{
 			name : "sabrina",
-			frame : "../src/img/author_frame_sabrina.png"
+			frame : "author_frame_sabrina.png"
 		},
 		{
 			name : "pascal",
-			frame : "../src/img/author_frame_pascal.png"
+			frame : "author_frame_pascal.png"
 		},
 		{
 			name : "laetitia",
-			frame : "../src/img/author_frame_laetitia.png"
+			frame : "author_frame_laetitia.png"
 		},
 		{
 			name : "claire",
-			frame : "../src/img/author_frame_claire.png"
+			frame : "author_frame_claire.png"
 		},
 		{
 			name : "matthias",
-			frame : "../src/img/author_frame_matthias.png"
+			frame : "author_frame_matthias.png"
 		},
 		{
 			name : "victor",
-			frame : "../src/img/author_frame_victor.png"
+			frame : "author_frame_victor.png"
 		}
 	];
 
@@ -58,12 +59,19 @@ function CreateCtrl(){
 	// Submit : Envoyer donnée à Firebase
 	create.save = function(){
 		if (create.newProject) {
-			console.log(create.newProject);
+
+			// En attendant de passer par une API qui gère la génération d'un ID
+			create.newProject.id = Date.now();
+			$rootScope.projets.push( create.newProject );
+
+			$state.go('home');
 		}
 	}
 
 }; 
 
+
+CreateCtrl.$inject = ['$rootScope', '$state']
 
 
 export default CreateCtrl

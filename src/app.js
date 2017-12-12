@@ -10,6 +10,7 @@ import 'checklist-model'
 // import 'angularfire'
 
 import config from './app.config.js'
+import run from './app.run.js'
 
 // services
 // import firebaseSrv from './services/firebaseSrv'
@@ -23,6 +24,7 @@ import viewProjCtrl from './view-proj/view-proj.controller.js'
 	angular
 	    .module('myApp', ['ui.router','ngMaterial','checklist-model']) //'firebase'
 	    .config(config)
+	    .run(run)
 	    .controller('CreateCtrl', CreateCtrl)
 	    .controller('viewProjCtrl', viewProjCtrl)
 	    .controller('HomeCtrl', HomeCtrl);

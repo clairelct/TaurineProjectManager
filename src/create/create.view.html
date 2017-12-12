@@ -65,7 +65,7 @@
 						</section>
 						<!-- Bloc BRIEF-->
 						<section id="brief-proj">
-							<label for="" class="legend">Brief / Commentaire</label>
+							<label class="legend">Brief / Commentaire</label>
 							<textarea placeholder="Description du projet..." ng-model="create.newProject.brief">{{create.newProject.brief}}</textarea> 
 						</section>
 					</div><!-- ./end col-lg-9 -->
@@ -86,8 +86,8 @@
 							<div class="authors-list">								
 								<fieldset>
 									<div ng-repeat="author in create.authors" ng-class="{ 'label-checked' : create.newProject.authorsSelected.includes(author) }">
-									<div style="width:40px;height:40px;background-color: blue;">
-										<img ng-src="{{projet.authorsSelected.frame}}" alt="Photo de l'auteur"/>
+									<div class="author-img">
+										<img ng-src="src/img/{{author.frame}}" alt="Photo de l'auteur"/>
 									</div>
 									<label>
 										<input 

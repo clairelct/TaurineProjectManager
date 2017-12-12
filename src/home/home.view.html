@@ -24,10 +24,10 @@
 			<div>
 				<label class="legend">Domaine</label>
 				<select name="" id="selectDomain" ng-model="home.filterValue.domainsSelected">
-					<option value="webdesign" selected>Webdesign</option>
-					<option value="print">Print</option>
-					<option value="webdeveloppment">Web Developpment</option>
-					<option value="motiondesign">Motion Design</option>
+					<option value="Webdesign" selected>Webdesign</option>
+					<option value="Print">Print</option>
+					<option value="Webdeveloppment">Web Developpment</option>
+					<option value="Motiondesign">Motion Design</option>
 				</select>	
 			</div>
 			<div>
@@ -55,7 +55,7 @@
 	<!-- Affichage projets -->
 	<ul id="home-ul-projects">
 		
-		<li ng-repeat="projet in home.fakeData | filter : home.filterValue">
+		<li ng-repeat="projet in home.projets | filter : home.filterValue : home.checkAuthor">
 			<a href="/#/view-proj/{{projet.id}}">
 			<div class="project-img"></div>
 			<div class="project-title">
@@ -74,7 +74,6 @@
 				
 			</div>	
 			<div class="project-author">
-				<p>Auteurs :</p>
 				<div ng-repeat="author in projet.authorsSelected">
 					{{author.name}}
 					<img ng-src="src/img/{{author.frame}}" alt="Description"/>

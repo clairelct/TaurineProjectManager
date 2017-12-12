@@ -180,9 +180,11 @@ header > div:nth-of-type(2){
 #home-ul-projects .project-details div:nth-of-type(1){
 	margin-bottom: 15px;
 }
+#home-ul-projects .project-author {display: flex;}
 #home-ul-projects .project-author  div {
 	width: 40px;
 	height: 40px;
+	margin-right: 8px;
 }
 #home-ul-projects .project-author img {width: 100%}
 
@@ -225,7 +227,10 @@ header > div:nth-of-type(2){
 }
 .light-theme .save-form input:hover {color: #ffffff;}
 
-.light-theme .authors-list fieldset > div {background-color: #ffffff;}
+.light-theme .authors-list fieldset > div {
+	background-color: #ffffff;
+	padding: 5px 0;
+}
 .light-theme .authors-list fieldset .label-checked label {color: #ffffff;}
 .light-theme .authors-list fieldset input:checked + label {color:#ffffff!important;}
 
@@ -428,6 +433,12 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 #authors-proj .legend {margin-bottom: 0px;}
 .authors-list fieldset > div {display: flex;}
 
+.authors-list .author-img {
+	width: 40px;
+	height:40px;
+	margin-left: 15px;
+}
+
 /* checkbox auteurs */
 .authors-list fieldset label {
 	display: flex;
@@ -436,11 +447,12 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 	align-items: center;
     text-align: left;
     font-size: 14px;
+    line-height: 14px;
     font-weight: bold;
     margin-bottom: 0!important;
     cursor: pointer;
     color: #FFF;
-    padding: 8px 25px;	
+    padding: 12px 16px;	
 }
 .authors-list fieldset {margin: 10px 0;}
 .authors-list fieldset > div {background-color: #27262c;}
@@ -470,11 +482,26 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 /*****************************/
 /*   TEMPLATE VIEW-PROJECT   */
 /*****************************/
-
-#vp-bloc-1 {
-	
+#vp-view article {
+	margin: 0 0 25px 0;
+}
+#vp-view article > div {
+	background-color: #26262c;
+}
+/* BLOC 1 */
+#vp-view article {
+	display: flex;
+	/*margin: 0 0 40px 0;*/
+}
+#vp-view .article-container {background-color: #26262c;}
+#vp-view .project-img{
+	text-align: right;
+	padding-right: 0;
 }
 
-
-
-
+/* BLOC 2 & 3 */
+#vp-view > div 
+.vp-brief, .vp-authors {
+	background-color: #26262c;
+	padding: 30px;
+}

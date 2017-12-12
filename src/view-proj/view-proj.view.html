@@ -1,4 +1,4 @@
-<div class="container" ng-controller="viewProjCtrl as vproj">
+<div class="container" id="vp-view" ng-controller="viewProjCtrl as vproj">
 	<header> <!-- Transformer header en directive ? -->
 			<div class="header-title">
 				<h2>Projet</h2>
@@ -12,9 +12,67 @@
 			</div>
 		</header>
 
+	<!-- BLOC 1 -->
+	<article class="row">
+		<div class="col-md-6">
+				<div class="project-title">
+					<h4>Titre : {{vproj.projet.title}}</h4>
+					<p>Domaine : {{vproj.projet.domainsSelected.join(', ')}}</p>
+				</div>
+				<div class="project-details">
+					<div>
+						<p class="legend">client</p>
+						<p>{{vproj.projet.client}}</p>
+					</div>
+					<div>
+						<p class="legend">début</p>
+						<p>{{vproj.projet.startDate | date: 'dd/MM/yyyy'}}</p>
+					</div>
+					<div>
+						<p class="legend">deadline</p>
+						<p>{{vproj.projet.endDate | date: 'dd/MM/yyyy'}}</p>
+					</div>
+			</div>
+		</div><!-- ./end bloc gauche-->
+		<div class="col-md-6 project-img">
+				<img ng-src="src/img/{{vproj.projet.projectImg}}" alt="Image du projet">
+		</div><!-- ./end bloc droite-->
+	</article>
 
-	<div >
-		<p>Titre : {{vproj.projet.title}}</p>
-		<p>Domaine : {{vproj.projet.domainsSelected}}</p>
+	<!-- BLOC 2 & 3-->
+	<div class="row">
+		<div class="col-md-9">
+			<div class="vp-brief">
+				<p class="legend">Brief / Commentaire</p>
+				<p>{{vproj.projet.brief}}</p>
+			</div>
+
+		</div><!-- ./end col-md-9 -->
+		<div class="col-md-3 ">
+			<div class="vp-authors">
+				coucou
+			</div>
+		</div><!--./end col-md-3-->
 	</div>
+
+	<!-- -->
+
+	<!-- BOUTON ENREGISTRER -->
+	<div class="row">
+		<div class="save-form col-lg-12" ng-show="vproj.showConfirmation">
+			<p>Êtes vous sûr de vouloir supprimer définitivement ce projet ???</p>
+			<div class="row">
+				<div class="col-lg-6">
+					<input type="button" ng-click="vproj.showConfirmation = false" value="Annuler">
+				</div>
+				<div class="col-lg-6">
+					<input type="button" ng-click="vproj.remove()" value="Confirmer la suppression">
+				</div>
+			</div>
+		</div>
+		<div class="save-form col-lg-12" ng-hide="vproj.showConfirmation">
+			<input type="button" ng-click="vproj.showConfirmation = true" value="Supprimer">	
+		</div>
+	</div>
+
 </div><!-- ./end container -->
