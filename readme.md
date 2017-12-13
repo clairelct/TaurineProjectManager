@@ -1,4 +1,4 @@
-#TAURINE PROJET MANAGER
+##TAURINE PROJET MANAGER
 Claire Leconte
 
 Application desktop conçue pour gérer un planning de production, suivre les projets en cours, mettre à disposition des informations relatives aux projets.
