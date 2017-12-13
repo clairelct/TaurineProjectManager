@@ -41,6 +41,10 @@ h3{
 	margin-bottom: 6px;
 	margin-top: 0;
 }
+h4{
+	font-size: 30px;
+	font-weight: bold;
+}
 p {margin: 0;}
 
 
@@ -96,11 +100,14 @@ nav .logo {
 	margin-right: 10px;
 } 
 nav .membreConnect, nav .membre {display: flex;}
-nav .membre {align-items: center;}
+nav .membre {
+	align-items: center;
+	font-weight: bold;
+}
 nav .membre div {
-	width: 30px;
-	height: 30px;
-	margin-left: 15px;
+	width: 40px;
+	height: 40px;
+	margin-left: 12px;
 }
 nav .membreConnect div:nth-of-type(2){
 	position: relative;
@@ -169,10 +176,10 @@ header > div:nth-of-type(2){
 	padding: 20px;
 	border-bottom: 1px solid rgb(54, 54, 65);
 }
+#home-ul-projects li a > div:nth-of-type(1){padding: 0;}
 
 #home-ul-projects .project-img{
 	border: none;
-	height: 135px;
 	width: auto;
 	background-color: #9595a5;
 }
@@ -387,7 +394,10 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 /*****************/
 /*	Bloc UPLOAD  */
 /*****************/
-#upload-proj {padding: 20px;}
+#upload-proj {
+	padding: 20px;
+	opacity: .3;
+}
 #upload-proj .frame {
 	width: 100%;
 	/*height: 135px;*/
@@ -479,6 +489,7 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 
 .save-form input:hover {background-color: #e33141;}
 
+ .error{color:red!important;}
 /*****************************/
 /*   TEMPLATE VIEW-PROJECT   */
 /*****************************/
@@ -488,20 +499,50 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 #vp-view article > div {
 	background-color: #26262c;
 }
+#vp-view article > div:nth-of-type(1){
+	padding-right: 35px;
+	padding-left: 35px;
+}
 /* BLOC 1 */
+#vp-view h4 + p {font-size: 18px;}
 #vp-view article {
 	display: flex;
 	/*margin: 0 0 40px 0;*/
 }
-#vp-view .article-container {background-color: #26262c;}
+#vp-view .project-title {
+	border-bottom: 1px solid rgb(54, 54, 65);
+	font-weight: bold;
+}
+#vp-view .project-title, #vp-view .project-details {
+	padding: 40px 0;
+}
 #vp-view .project-img{
 	text-align: right;
 	padding-right: 0;
 }
+#vp-view .project-details {display: flex;}
+#vp-view .project-details > div {flex-grow:1;}
+#vp-view .project-details div p:nth-of-type(2){font-weight:bold;}
 
 /* BLOC 2 & 3 */
 #vp-view > div 
 .vp-brief, .vp-authors {
 	background-color: #26262c;
-	padding: 30px;
+	padding: 35px;
 }
+
+.vp-authors > div {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.vp-authors p.legend, .vp-brief p.legend {padding-bottom:15px;}
+.vp-authors > div:last-child{margin-bottom: 0;}
+.vp-authors > div > div {
+	height: 40px;
+	width: 40px;
+	margin-right: 15px;
+}
+
+

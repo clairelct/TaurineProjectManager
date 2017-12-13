@@ -15,46 +15,42 @@ function CreateCtrl( $rootScope, $state ){
 		authorsSelected: []
 	};
 
-	create.domains = ["Print","Webdesign","Motiondesign","WebDeveloppment"]
-	//create.authors = ["jerome","katell","sabrina","pascal","laetitia","claire","matthias","victor"]
+	create.domains = ["Print","Webdesign","Motiondesign","Developpement"]
+
 	create.authors = [
 		{
-			name : "jerome",
+			name : "Jérôme",
 			frame : "author_frame_jerome.png"
 		},
 		{
-			name : "katell",
+			name : "Katell",
 			frame : "author_frame_katell.png"
 		},
 		{
-			name : "sabrina",
+			name : "Sabrina",
 			frame : "author_frame_sabrina.png"
 		},
 		{
-			name : "pascal",
+			name : "Pascal",
 			frame : "author_frame_pascal.png"
 		},
 		{
-			name : "laetitia",
+			name : "Laëtitia",
 			frame : "author_frame_laetitia.png"
 		},
 		{
-			name : "claire",
+			name : "Claire",
 			frame : "author_frame_claire.png"
 		},
 		{
-			name : "matthias",
+			name : "Matthias",
 			frame : "author_frame_matthias.png"
 		},
 		{
-			name : "victor",
+			name : "Victor",
 			frame : "author_frame_victor.png"
 		}
 	];
-
-	create.test = function(){
-		console.log(create.newProject.authorsSelected);
-	}
 
 	// Submit : Envoyer donnée à Firebase
 	create.save = function(){

@@ -26,26 +26,33 @@
 				<select name="" id="selectDomain" ng-model="home.filterValue.domainsSelected">
 					<option value="Webdesign" selected>Webdesign</option>
 					<option value="Print">Print</option>
-					<option value="Webdeveloppment">Web Developpment</option>
+					<option value="Developpement">Développement</option>
 					<option value="Motiondesign">Motion Design</option>
 				</select>	
 			</div>
 			<div>
 				<label class="legend">Auteur</label>
 				<select name="" id="selectAuthor" ng-model="home.filterValue.authorsSelected">
-					<option value="katell" selected>Katell</option>
-					<option value="pascal">Pascal</option>
-					<option value="victor">Victor</option>
-					<option value="jerome">Jérôme</option>
+					<option value="Jérôme" selected>Jérôme</option>
+					<option value="Katell">Katell</option>
+					<option value="Sabrina">Sabrina</option>
+					<option value="Pascal">Pascal</option>
+					<option value="Laëtitia">Laëtitia</option>
+					<option value="Claire">Claire</option>
+					<option value="Matthias">Matthias</option>
+					<option value="Victor">Victor</option>
 				</select>	
 			</div>
 			<div>
 				<label class="legend">Client</label>
-				<select name="" id="selectClient" ng-model="home.filterValue.client">
-					<option value="M6 Publicité" selected>M6 Publicité</option>
+				<select id="selectClient" ng-model="home.filterValue.client">
+					<option value="France Alzheimer" selected>France Alzheimer</option>
 					<option value="Warner Bros">Warner Bros</option>
-					<option value="Armani">Armani</option>
+					<option value="Eden Traiteur">Eden Traiteur</option>
+					<option value="Tag Barber Shop">Tag Barber Shop</option>
+					<option value="M6 Publicité">M6 Publicité</option>
 					<option value="TF1-Téléshopping">TF1-Téléshopping</option>
+					<option value="Harveston">Harveston</option>
 				</select>	
 			</div>		
 		</div><!-- ./ end selects-filters -->
@@ -57,7 +64,9 @@
 		
 		<li ng-repeat="projet in home.projets | filter : home.filterValue : home.checkAuthor">
 			<a href="/#/view-proj/{{projet.id}}">
-			<div class="project-img"></div>
+			<div class="project-img">
+				<img ng-src="src/img/{{projet.projectImg}}" alt="Photo du projet">
+			</div>
 			<div class="project-title">
 				<h3>{{projet.title}}</h3>
 				<p>{{projet.domainsSelected.join(', ')}}</p>
@@ -75,8 +84,11 @@
 			</div>	
 			<div class="project-author">
 				<div ng-repeat="author in projet.authorsSelected">
-					{{author.name}}
-					<img ng-src="src/img/{{author.frame}}" alt="Description"/>
+					<div>
+						<p>{{autor.name}}</p>
+					
+					<img ng-src="src/img/{{author.frame}}" alt="{{author.name}}"/>
+					</div>
 				</div>
 			</div>	
 		</a>		

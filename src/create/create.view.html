@@ -23,11 +23,14 @@
 						<!-- Bloc INFOS-->
 						<section id="infos-proj">
 							<div class="titre">
-								<label for="" class="legend">Titre du projet</label>
-								<input type="text" placeholder="Nom du projet" ng-model="create.newProject.title">
+								<label class="legend">Titre du projet</label>
+								<input name="titre" type="text" placeholder="Nom du projet" ng-model="create.newProject.title" ng-minlength="2" ng-maxlength="40" required>
+								<span class="error" ng-show="createForm.titre.$touched &&  createForm.titre.$error.minlength">Le titre doit se composer de 2 caractères minimum.</span>
+								<span class="error" ng-show="createForm.titre.$touched &&  createForm.titre.$error.maxlength">Le titre ne doit pas excéder 40 caractères maximum.</span>
+								<span class="error" ng-show="submitted && createForm.titre.$error.required">Ce champs est requis.</span>
 							</div>
 							<div class="checkboxDomain">
-								<label for="" class="legend">Domaine</label>
+								<label class="legend">Domaine</label>
 								<fieldset>
 									<label ng-repeat="domain in create.domains" ng-class="{ 'label-checked' : create.newProject.domainsSelected.includes(domain) }">
 										<input 
@@ -35,17 +38,22 @@
 										checklist-model="create.newProject.domainsSelected"
 										name="domain"
 										checklist-value="domain"
+										required
 										>
 										{{domain}}
 										
 									</label>
+									<span class="error" ng-show="createForm.titre.$pristine">Veuillez sélectionner au moins un domaine.</span>
 						
 								</fieldset>
 							</div>
 							<div class="client-delay">
 								<div class="client">
-									<label for="" class="legend">Client</label>
-									<input type="text" placeholder="Nom du client" ng-model="create.newProject.client">
+									<label class="legend">Client</label>
+									<input name="client" type="text" placeholder="Nom du client" ng-model="create.newProject.client" ng-minlength="2" ng-maxlength="25" required>
+									<span class="error" ng-show="createForm.client.$touched &&  createForm.client.$error.minlength">Le titre doit se composer de 2 caractères minimum.</span>
+									<span class="error" ng-show="createForm.client.$touched &&  createForm.client.$error.maxlength">Le titre ne doit pas excéder 25 caractères.</span>
+									<span class="error" ng-show="submitted && createForm.client.$error.required">Ce champs est requis.</span>
 								</div>
 								<div class="delay">
 									<p class="legend">Délais</p>
@@ -95,7 +103,7 @@
 										checklist-model="create.newProject.authorsSelected"
 										name="author"
 										checklist-value="author"
-										ng-click="create.test()"
+										required
 										>
 										{{author.name}}
 										

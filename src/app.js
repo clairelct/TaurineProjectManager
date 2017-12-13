@@ -6,14 +6,11 @@ import angular from 'angular';
 // import 'angular-material';
 import '@uirouter/angularjs'
 import 'checklist-model'
-// import 'firebase'
-// import 'angularfire'
+
 
 import config from './app.config.js'
 import run from './app.run.js'
 
-// services
-// import firebaseSrv from './services/firebaseSrv'
 
 // controllers
 import CreateCtrl from './create/create.controller.js'

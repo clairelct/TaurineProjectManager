@@ -16,20 +16,20 @@
 	<article class="row">
 		<div class="col-md-6">
 				<div class="project-title">
-					<h4>Titre : {{vproj.projet.title}}</h4>
-					<p>Domaine : {{vproj.projet.domainsSelected.join(', ')}}</p>
+					<h4>{{vproj.projet.title}}</h4>
+					<p>{{vproj.projet.domainsSelected.join(', ')}}</p>
 				</div>
 				<div class="project-details">
 					<div>
-						<p class="legend">client</p>
+						<p class="legend">Client</p>
 						<p>{{vproj.projet.client}}</p>
 					</div>
 					<div>
-						<p class="legend">début</p>
+						<p class="legend">Début</p>
 						<p>{{vproj.projet.startDate | date: 'dd/MM/yyyy'}}</p>
 					</div>
 					<div>
-						<p class="legend">deadline</p>
+						<p class="legend">Deadline</p>
 						<p>{{vproj.projet.endDate | date: 'dd/MM/yyyy'}}</p>
 					</div>
 			</div>
@@ -50,7 +50,11 @@
 		</div><!-- ./end col-md-9 -->
 		<div class="col-md-3 ">
 			<div class="vp-authors">
-				coucou
+				<p class="legend">Auteur(s) du projet</p>
+				<div ng-repeat="author in vproj.projet.authorsSelected">
+					<div><img ng-src="src/img/{{author.frame}}" alt="Photo de l'auteur"></div>
+					<p>{{author.name}}</p>
+				</div>
 			</div>
 		</div><!--./end col-md-3-->
 	</div>
