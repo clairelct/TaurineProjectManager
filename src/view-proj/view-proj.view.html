@@ -63,18 +63,18 @@
 
 	<!-- BOUTON ENREGISTRER -->
 	<div class="row">
-		<div class="save-form col-lg-12" ng-show="vproj.showConfirmation">
-			<p>Êtes vous sûr de vouloir supprimer définitivement ce projet ???</p>
+		<div class="button-form col-lg-12" ng-show="vproj.showConfirmation">
+			<p class="bold">Êtes vous sûr de vouloir supprimer définitivement ce projet ?</p>
 			<div class="row">
 				<div class="col-lg-6">
-					<input type="button" ng-click="vproj.showConfirmation = false" value="Annuler">
+					<input class="button-cancel" type="button" ng-click="vproj.showConfirmation = false" value="Annuler">
 				</div>
 				<div class="col-lg-6">
 					<input type="button" ng-click="vproj.remove()" value="Confirmer la suppression">
 				</div>
 			</div>
 		</div>
-		<div class="save-form col-lg-12" ng-hide="vproj.showConfirmation">
+		<div class="button-form col-lg-12" ng-hide="vproj.showConfirmation">
 			<input type="button" ng-click="vproj.showConfirmation = true" value="Supprimer">	
 		</div>
 	</div>

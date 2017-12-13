@@ -1,7 +1,3 @@
-/*.active {
-	background-color: black;
-	color: white;
-}*/
 
 /***********************************/
 /*           GENERAUX              */
@@ -122,9 +118,7 @@ nav .membreConnect div:nth-of-type(2) i {
 }
 /*** HEADER ***/
 
-.header-title h2, .header-title h2 + p {
-	display: inline-block;
-}
+.header-title h2, .header-title h2 + p {display: inline-block;}
 .header-title h2 {
 	border-right: 1px solid #696875;
 	margin-right: 5px;
@@ -227,12 +221,12 @@ header > div:nth-of-type(2){
 
 .light-theme #upload-proj .buttons div {background-color: #323137;}
 
-.light-theme .save-form input {
+.light-theme .button-form input {
 	background-color: #ffffff;
 	border: 1px solid #dfdee8;
 	color: #323137;
 }
-.light-theme .save-form input:hover {color: #ffffff;}
+.light-theme .button-form input:hover {color: #ffffff;}
 
 .light-theme .authors-list fieldset > div {
 	background-color: #ffffff;
@@ -473,8 +467,8 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 
 /*** BOUTON ENREGISTRER ***/
 
-.save-form {margin: 50px 0 20px;}
-.save-form input{
+.button-form {margin: 50px 0 20px;}
+.button-form input{
 	padding: 30px 0;
 	text-align: center;
 	width: 100%;
@@ -487,9 +481,9 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 	transition: .2s color background-color ease-in-out;
 }
 
-.save-form input:hover {background-color: #e33141;}
+.button-form input:hover {background-color: #e33141;}
+.error{color:red!important;}
 
- .error{color:red!important;}
 /*****************************/
 /*   TEMPLATE VIEW-PROJECT   */
 /*****************************/
@@ -544,5 +538,8 @@ md-icon.md-default-theme, md-icon{color:#9695a5!important;}
 	width: 40px;
 	margin-right: 15px;
 }
-
-
+.button-form input.button-cancel:hover {background-color: #717186;}
+#vp-view .button-form .bold {
+	padding-bottom: 15px;
+	text-align: center;
+}

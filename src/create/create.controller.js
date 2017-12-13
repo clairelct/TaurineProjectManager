@@ -15,7 +15,7 @@ function CreateCtrl( $rootScope, $state ){
 		authorsSelected: []
 	};
 
-	create.domains = ["Print","Webdesign","Motiondesign","Developpement"]
+	create.domains = ["Print","Webdesign","Motiondesign","Développement Web"]
 
 	create.authors = [
 		{
