@@ -1,12 +1,12 @@
 import './styles/app.css'
-import angular from 'angular';
-// import 'angular-animate';
-// import 'angular-aria';
-// import 'angular-messages';
-// import 'angular-material';
+import angular from 'angular'
+
+import 'angular-animate'
+import 'angular-aria'
+import 'angular-messages'
+import 'angular-material'
 import '@uirouter/angularjs'
 import 'checklist-model'
-
 
 import config from './app.config.js'
 import run from './app.run.js'
