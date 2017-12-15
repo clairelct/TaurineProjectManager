@@ -14,7 +14,7 @@ function HomeCtrl($rootScope){
 
 	home.checkAuthor = function(actual, expected) {
 
-		console.log(actual, expected);
+		// console.log(actual, expected);
 
 		if ("object" === typeof actual) {
 			return actual.name === expected;
