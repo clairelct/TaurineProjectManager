@@ -1,10 +1,10 @@
 import './styles/app.css'
 import angular from 'angular'
 
-import 'angular-animate'
-import 'angular-aria'
-import 'angular-messages'
-import 'angular-material'
+// import 'angular-animate'
+// import 'angular-aria'
+// import 'angular-messages'
+// import 'angular-material'
 import '@uirouter/angularjs'
 import 'checklist-model'
 
